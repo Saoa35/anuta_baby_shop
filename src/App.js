@@ -2,7 +2,9 @@ function App() {
   return (
     <div className="wrapper">
       <div className="cart-overlay">
-      <div className='cart'></div>
+      <div className='cart'>
+        <h2>Cart</h2>
+      </div>
       </div>
 
       <header>
