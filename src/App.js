@@ -3,10 +3,10 @@ function App() {
     <div className="wrapper">
       <header>
         <div className="headerLeft">
-          <img src='/img/logo.png' width={40} heigth={40} style={{ borderRadius: 30 }} alt='logo'/>
+          <img src='/img/logo.png' width={40} heigth={40} style={{borderRadius:'20px'}} alt='logo'/>
           <div className="headerInfo">
             <h3>Anuta Baby Shop</h3>
-            <p>The best store for adults and children</p>
+            <p>The best goods for adults and children</p>
           </div>
         </div>
         <ul className="headerRight">
