@@ -1,8 +1,8 @@
 function App() {
   return (
     <div className="wrapper">
-      <div className='cart'>
-        
+      <div className="cart-overlay">
+      <div className='cart'></div>
       </div>
 
       <header>
