@@ -22,8 +22,8 @@ function App() {
       <div className="content">
         <div>
           <h1>All goods</h1>
-          <div className="serch-block">
-            
+          <div className="search-block">
+            <img src='/img/search.svg' alt='Search'/>
           </div>
         </div>
        
