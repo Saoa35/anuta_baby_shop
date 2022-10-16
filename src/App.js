@@ -29,7 +29,9 @@ function App() {
           <span>Price:</span>
           <b>200 uah</b>
         </div>
-        <button></button>
+        <button>
+          <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
+        </button>
        </div>
       </div>
     </div>
