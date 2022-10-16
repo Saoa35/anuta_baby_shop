@@ -24,6 +24,7 @@ function App() {
           <h1>All goods</h1>
           <div className="search-block">
             <img src='/img/search.svg' alt='Search'/>
+            <input placeholder="Searh..."/>
           </div>
         </div>
        
