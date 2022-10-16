@@ -1,6 +1,10 @@
 function App() {
   return (
     <div className="wrapper">
+      <div className='cart'>
+        
+      </div>
+
       <header>
         <div className="headerLeft">
           <img src='/img/logo.png' width={40} heigth={40} style={{borderRadius:'20px'}} alt='logo'/>
