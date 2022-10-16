@@ -12,7 +12,7 @@ function App() {
         <ul className="headerRight">
           <li>
             <img src="/img/cart.svg" width={25} height={25} alt='cart'/>
-            <span>1250 uah</span>
+            <span style={{margin:' 0 15px'}}>1250 uah</span>
           </li>
           <li>
           <img src="/img/user.svg" width={25} height={25} alt='user'/>
