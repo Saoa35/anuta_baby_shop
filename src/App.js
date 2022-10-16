@@ -1,6 +1,12 @@
 function App() {
   return (
-    <div className="App">
+    <div className="wrapper">
+      <header>
+        <svg/>
+        <div>
+          <h3>Anuta Baby Shop</h3>
+        </div>
+      </header>
     </div>
   );
 }
