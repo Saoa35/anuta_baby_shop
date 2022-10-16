@@ -23,15 +23,17 @@ function App() {
         <h1>All goods</h1>
        
        <div className="card">
-        <img src="" alt=""/>
-        <p></p>
-        <div>
+        <img width={153} height={122} src="/img/Goods/1.jpg" alt="Goods"/>
+        <p>Fighter Aircraft Hawker Tempest</p>
+        <div className='cardBottom'>
+        <div className="cardPrice">
           <span>Price:</span>
           <b>200 uah</b>
         </div>
         <button>
           <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
         </button>
+        </div>
        </div>
       </div>
     </div>

@@ -57,3 +57,18 @@ header {
     margin: 0;
   }
 }
+
+.card {
+  border: 1px solid rgb(255, 238, 238);
+  padding: 20px;
+  width: 210px;
+
+  .cardBottom {
+    display: flex;
+    justify-content: space-between;
+
+    .cardPrice {
+      display: flex;
+    }
+  }
+}
