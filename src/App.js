@@ -2,14 +2,14 @@ function App() {
   return (
     <div className="wrapper">
       <header>
-        <div>
+        <div className="headerLeft">
           <svg/>
-          <div>
+          <div className="headerInfo">
             <h3>Anuta Baby Shop</h3>
             <p>The best store for adults and children</p>
           </div>
         </div>
-        <ul>
+        <ul className="headerRight">
           <li>
             <svg/>
             <span>1250 uah</span>
