@@ -22,19 +22,60 @@ function App() {
       <div className="content">
         <h1>All goods</h1>
        
-       <div className="card">
-        <img width={153} height={122} src="/img/Goods/1.jpg" alt="Goods"/>
-        <p>Fighter Aircraft Hawker Tempest</p>
-        <div className='cardBottom'>
-        <div className="cardPrice">
-          <span>Price:</span>
-          <b>200 uah</b>
+        <div className='goods'>
+          <div className="card">
+            <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/1.jpg" alt="Goods"/>
+            <h5>Fighter Aircraft Hawker Tempest</h5>
+            <div className='cardBottom'>
+              <div className="cardPrice">
+                <span>Price:</span>
+                <b>200 uah</b>
+              </div>
+              <button className='button'>
+                <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
+              </button>
+            </div>
+          </div>
+          <div className="card">
+            <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/2.jpg" alt="Goods"/>
+            <h5>Messerschmitt Bf.110 Night Fighter</h5>
+            <div className='cardBottom'>
+              <div className="cardPrice">
+                <span>Price:</span>
+                <b>300 uah</b>
+              </div>
+              <button className='button'>
+                <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
+              </button>
+            </div>
+          </div>
+          <div className="card">
+            <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/3.jpg" alt="Goods"/>
+            <h5>Boeing B-29 Superfortress</h5>
+            <div className='cardBottom'>
+              <div className="cardPrice">
+                <span>Price:</span>
+                <b>500 uah</b>
+              </div>
+              <button className='button'>
+                <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
+              </button>
+            </div>
+          </div>
+          <div className="card">
+            <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/4.jpg" alt="Goods"/>
+            <h5>Grumman F6F Hellcat</h5>
+            <div className='cardBottom'>
+              <div className="cardPrice">
+                <span>Price:</span>
+                <b>350 uah</b>
+              </div>
+              <button className='button'>
+                <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
+              </button>
+            </div>
+          </div>
         </div>
-        <button>
-          <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
-        </button>
-        </div>
-       </div>
       </div>
     </div>
   );
