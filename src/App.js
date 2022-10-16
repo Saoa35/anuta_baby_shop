@@ -21,6 +21,7 @@ function App() {
       </header>
       <div className="content">
         <h1>All goods</h1>
+        .....
       </div>
     </div>
   );
