@@ -20,7 +20,12 @@ function App() {
         </ul>
       </header>
       <div className="content">
-        <h1>All goods</h1>
+        <div>
+          <h1>All goods</h1>
+          <div className="serch-block">
+            
+          </div>
+        </div>
        
         <div className='goods'>
           <div className="card">
@@ -51,7 +56,7 @@ function App() {
           </div>
           <div className="card">
             <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/3.jpg" alt="Goods"/>
-            <h5>Boeing B-29 Superfortress</h5>
+            <h5>Bomber Boeing B-29 Superfortress</h5>
             <div className='cardBottom'>
               <div className="cardPrice">
                 <span>Price:</span>
@@ -64,7 +69,7 @@ function App() {
           </div>
           <div className="card">
             <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/4.jpg" alt="Goods"/>
-            <h5>Grumman F6F Hellcat</h5>
+            <h5>Carrier-based Fighter Grumman F6F Hellcat</h5>
             <div className='cardBottom'>
               <div className="cardPrice">
                 <span>Price:</span>
