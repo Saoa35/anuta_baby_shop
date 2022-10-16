@@ -20,7 +20,7 @@ function App() {
         </ul>
       </header>
       <div className="content">
-        <div>
+        <div className="content-header">
           <h1>All goods</h1>
           <div className="search-block">
             <img src='/img/search.svg' alt='Search'/>
@@ -30,6 +30,9 @@ function App() {
        
         <div className='goods'>
           <div className="card">
+            <div className='favorite'>
+              <img src='/img/unliked.svg' alt="Unliked"/>
+            </div>
             <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/1.jpg" alt="Goods"/>
             <h5>Fighter Aircraft Hawker Tempest</h5>
             <div className='cardBottom'>
