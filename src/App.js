@@ -2,7 +2,7 @@ function App() {
   return (
     <div className="wrapper">
 
-      <div className="cart-overlay">
+      {/* <div className="cart-overlay">
         <div className='cart'>
           <h2>Cart</h2>
 
@@ -12,7 +12,7 @@ function App() {
               <p>Fighter Aircraft Hawker Tempest</p>
               <b>200 uah</b>
             </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
+            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove Item"/>
           </div>
 
           <div className="cartItem">
@@ -21,24 +21,24 @@ function App() {
               <p>Carrier-based Fighter Grumman F6F Hellcat</p>
               <b>350 uah</b>
             </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
+            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" title="Remove Item"/>
           </div>
 
           <ul>
             <li>
-              <span></span>
+              <span>Total price:</span>
               <div></div>
-              <b></b>
+              <b>530 uah</b>
             </li>
             <li>
-              <span></span>
+              <span>Discount:</span>
               <div></div>
-              <b></b>
+              <b>20 uah</b>
             </li>
           </ul>
 
         </div>
-      </div>
+      </div> */}
 
       <header>
         <div className="headerLeft">
@@ -58,7 +58,9 @@ function App() {
           </li>
         </ul>
       </header>
+
       <div className="content">
+
         <div className="content-header">
           <h1>All goods</h1>
           <div className="search-block">
@@ -68,9 +70,10 @@ function App() {
         </div>
        
         <div className='goods'>
+
           <div className="card">
             <div className='favorite'>
-              <img src='/img/unliked.svg' alt="Unliked"/>
+              <img src='/img/unliked.svg' alt="Unliked" title="Set as Favorite"/>
             </div>
             <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/1.jpg" alt="Goods"/>
             <h5>Fighter Aircraft Hawker Tempest</h5>
@@ -80,10 +83,11 @@ function App() {
                 <b>200 uah</b>
               </div>
               <button className='button'>
-                <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
+                <img src='/img/plus.svg' width={11} height={11} alt='Plus' title="Add to Cart"/>
               </button>
             </div>
           </div>
+
           <div className="card">
             <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/2.jpg" alt="Goods"/>
             <h5>Messerschmitt Bf.110 Night Fighter</h5>
@@ -93,10 +97,11 @@ function App() {
                 <b>300 uah</b>
               </div>
               <button className='button'>
-                <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
+                <img src='/img/plus.svg' width={11} height={11} alt='Plus' title="Add to Cart"/>
               </button>
             </div>
           </div>
+
           <div className="card">
             <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/3.jpg" alt="Goods"/>
             <h5>Bomber Boeing B-29 Superfortress</h5>
@@ -106,10 +111,11 @@ function App() {
                 <b>500 uah</b>
               </div>
               <button className='button'>
-                <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
+                <img src='/img/plus.svg' width={11} height={11} alt='Plus' title="Add to Cart"/>
               </button>
             </div>
           </div>
+
           <div className="card">
             <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/4.jpg" alt="Goods"/>
             <h5>Carrier-based Fighter Grumman F6F Hellcat</h5>
@@ -119,10 +125,11 @@ function App() {
                 <b>350 uah</b>
               </div>
               <button className='button'>
-                <img src='/img/plus.svg' width={11} height={11} alt='Plus'/>
+                <img src='/img/plus.svg' width={11} height={11} alt='Plus' title="Add to Cart"/>
               </button>
             </div>
           </div>
+
         </div>
       </div>
     </div>
