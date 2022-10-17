@@ -12,6 +12,7 @@ function App() {
             <p>Fighter Aircraft Hawker Tempest</p>
             <b>200 uah</b>
           </div>
+          <img src="/img/btn-remove.svg" alt="Remove"/>
         </div>
       </div>
       </div>
