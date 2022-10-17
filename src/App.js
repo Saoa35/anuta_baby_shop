@@ -1,9 +1,14 @@
 function App() {
   return (
     <div className="wrapper">
+
       <div className="cart-overlay">
       <div className='cart'>
         <h2>Cart</h2>
+
+        <div className="cartItem">
+          <img src="" alt=""/>
+        </div>
       </div>
       </div>
 
