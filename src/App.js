@@ -3,17 +3,17 @@ function App() {
     <div className="wrapper">
 
       <div className="cart-overlay">
-      <div className='cart'>
-        <h2>Cart</h2>
-        <div className="cartItem">
-          <img width={200} height={160} style={{borderRadius:'10px'}} src="/img/Goods/1.jpg" alt="Goods"/>
-          <div>
-            <p>Fighter Aircraft Hawker Tempest</p>
-            <b>200 uah</b>
+        <div className='cart'>
+          <h2>Cart</h2>
+          <div className="cartItem">
+            <img width={100} height={85} style={{borderRadius:'10px', marginRight:'20px'}} src="/img/Goods/1.jpg" alt="Goods"/>
+            <div style={{marginRight:'15px'}}>
+              <p>Fighter Aircraft Hawker Tempest</p>
+              <b>200 uah</b>
+            </div>
+            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
           </div>
-          <img src="/img/btn-remove.svg" alt="Remove"/>
         </div>
-      </div>
       </div>
 
       <header>
