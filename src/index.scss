@@ -27,6 +27,8 @@ body {
     z-index: 1;
 
     .cart {
+      display:flex;
+      flex-direction: column;
       position: absolute;
       width: 385px;
       height: 95%;
@@ -76,16 +78,27 @@ body {
         }
       }
 
-      ul {
+      .cartFooter {
         list-style: none;
+        padding-left: 0;
 
         li{
           display: flex;
+          align-items: flex-end;
+          margin-bottom: 20px;
+
+          div {
+            flex: 1;
+            height: 1px;
+            border-bottom: 1px dashed #dfdfdf;
+            position: relative;
+            top: -4px;
+            margin: 0 7px;
+          }
         }
       }
     }
   }
-
 
   header {
     padding: 25px;

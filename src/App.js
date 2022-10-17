@@ -2,7 +2,7 @@ function App() {
   return (
     <div className="wrapper">
 
-      {/* <div className="cart-overlay">
+      <div className="cart-overlay">
         <div className='cart'>
           <h2>Cart</h2>
 
@@ -12,7 +12,7 @@ function App() {
               <p>Fighter Aircraft Hawker Tempest</p>
               <b>200 uah</b>
             </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove Item"/>
+            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
           </div>
 
           <div className="cartItem">
@@ -21,10 +21,10 @@ function App() {
               <p>Carrier-based Fighter Grumman F6F Hellcat</p>
               <b>350 uah</b>
             </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" title="Remove Item"/>
+            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" title="Remove from Cart"/>
           </div>
 
-          <ul>
+          <ul className="cartFooter">
             <li>
               <span>Total price:</span>
               <div></div>
@@ -38,7 +38,7 @@ function App() {
           </ul>
 
         </div>
-      </div> */}
+      </div>
 
       <header>
         <div className="headerLeft">
