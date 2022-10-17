@@ -5,9 +5,8 @@ function App() {
       <div className="cart-overlay">
       <div className='cart'>
         <h2>Cart</h2>
-
         <div className="cartItem">
-          <img src="/img/Goods/1.jpg" alt="Goods"/>
+          <img width={200} height={160} style={{borderRadius:'10px'}} src="/img/Goods/1.jpg" alt="Goods"/>
           <div>
             <p>Fighter Aircraft Hawker Tempest</p>
             <b>200 uah</b>
