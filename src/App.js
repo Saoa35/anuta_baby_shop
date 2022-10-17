@@ -7,7 +7,11 @@ function App() {
         <h2>Cart</h2>
 
         <div className="cartItem">
-          <img src="" alt=""/>
+          <img src="/img/Goods/1.jpg" alt="Goods"/>
+          <div>
+            <p>Fighter Aircraft Hawker Tempest</p>
+            <b>200 uah</b>
+          </div>
         </div>
       </div>
       </div>
