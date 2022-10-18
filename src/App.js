@@ -6,22 +6,24 @@ function App() {
         <div className='cart'>
           <h2>Cart</h2>
 
-          <div className="cartItem">
-            <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src="/img/Goods/1.jpg" alt="Goods"/>
-            <div style={{marginRight:'15px'}}>
-              <p>Fighter Aircraft Hawker Tempest</p>
-              <b>200 uah</b>
+          <div className="items">
+            <div className="cartItem">
+              <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src="/img/Goods/1.jpg" alt="Goods"/>
+              <div style={{marginRight:'15px'}}>
+                <p>Fighter Aircraft Hawker Tempest</p>
+                <b>200 uah</b>
+              </div>
+              <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
             </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
-          </div>
 
-          <div className="cartItem">
-            <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src="/img/Goods/4.jpg" alt="Goods"/>
-            <div style={{marginRight:'15px'}}>
-              <p>Carrier-based Fighter Grumman F6F Hellcat</p>
-              <b>350 uah</b>
+            <div className="cartItem">
+              <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src="/img/Goods/4.jpg" alt="Goods"/>
+              <div style={{marginRight:'15px'}}>
+                <p>Carrier-based Fighter Grumman F6F Hellcat</p>
+                <b>350 uah</b>
+              </div>
+              <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" title="Remove from Cart"/>
             </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" title="Remove from Cart"/>
           </div>
 
           <ul className="cartFooter">
@@ -36,6 +38,7 @@ function App() {
               <b>20 uah</b>
             </li>
           </ul>
+          <button>Place an order</button>
 
         </div>
       </div>
