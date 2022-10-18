@@ -112,9 +112,15 @@ body {
           .greenButton {
             position: relative;
 
+            &:hover {
+              img {
+                transform: translateX(6px);
+              }
+            }
+
             img {
               position: absolute;
-              right: 40px;
+              right: 30px;
               top: 20px;
               transition: transform 0.15s ease-in-out;
             }

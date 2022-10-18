@@ -4,7 +4,8 @@ function App() {
 
       <div className="cart-overlay">
         <div className='cart'>
-          <h2>Cart</h2>
+          <h2>Cart<img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/></h2>
+          
 
           <div className="items">
             <div className="cartItem">
@@ -29,14 +30,14 @@ function App() {
           <div className="cartFooter">
             <ul>
               <li>
-                <span>Total price:</span>
+                <span>Total items:</span>
                 <div></div>
-                <b>530 uah</b>
+                <b>2 items</b>
               </li>
               <li>
-                <span>Discount:</span>
+                <span>Total price:</span>
                 <div></div>
-                <b>20 uah</b>
+                <b>550 uah</b>
               </li>
             </ul>
             <button className="greenButton">Place an order <img src="/img/arrow.svg" alt="Arrow"/></button>
