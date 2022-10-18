@@ -39,7 +39,7 @@ function App() {
                 <b>20 uah</b>
               </li>
             </ul>
-          <button>Place an order</button>
+            <button className="greenButton">Place an order <img src="/img/arrow.svg" alt="Arrow"/></button>
           </div>
 
         </div>
