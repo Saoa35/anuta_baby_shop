@@ -39,7 +39,7 @@ function App() {
                 <b>20 uah</b>
               </li>
             </ul>
-            <button>Place an order</button>
+          <button>Place an order</button>
           </div>
 
         </div>
@@ -80,7 +80,7 @@ function App() {
             <div className='favorite'>
               <img src='/img/unliked.svg' alt="Unliked" title="Set as Favorite"/>
             </div>
-            <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/1.jpg" alt="Goods"/>
+            <img width={155} height={130} style={{borderRadius:'10px'}}  src="/img/Goods/1.jpg" alt="Goods"/>
             <h5>Fighter Aircraft Hawker Tempest</h5>
             <div className='cardBottom'>
               <div className="cardPrice">
@@ -94,7 +94,7 @@ function App() {
           </div>
 
           <div className="card">
-            <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/2.jpg" alt="Goods"/>
+            <img width={155} height={130} style={{borderRadius:'10px'}}  src="/img/Goods/2.jpg" alt="Goods"/>
             <h5>Messerschmitt Bf.110 Night Fighter</h5>
             <div className='cardBottom'>
               <div className="cardPrice">
@@ -108,7 +108,7 @@ function App() {
           </div>
 
           <div className="card">
-            <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/3.jpg" alt="Goods"/>
+            <img width={155} height={130} style={{borderRadius:'10px'}}  src="/img/Goods/3.jpg" alt="Goods"/>
             <h5>Bomber Boeing B-29 Superfortress</h5>
             <div className='cardBottom'>
               <div className="cardPrice">
@@ -122,7 +122,7 @@ function App() {
           </div>
 
           <div className="card">
-            <img width={200} height={160} style={{borderRadius:'10px'}}  src="/img/Goods/4.jpg" alt="Goods"/>
+            <img width={155} height={130} style={{borderRadius:'10px'}}  src="/img/Goods/4.jpg" alt="Goods"/>
             <h5>Carrier-based Fighter Grumman F6F Hellcat</h5>
             <div className='cardBottom'>
               <div className="cardPrice">
