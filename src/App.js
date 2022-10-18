@@ -5,9 +5,9 @@ function App() {
       <div className="cart-overlay">
         <div className='cart'>
           <h2>Cart<img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/></h2>
-          
 
           <div className="items">
+
             <div className="cartItem">
               <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src="/img/Goods/1.jpg" alt="Goods"/>
               <div style={{marginRight:'15px'}}>
@@ -25,6 +25,7 @@ function App() {
               </div>
               <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" title="Remove from Cart"/>
             </div>
+
           </div>
 
           <div className="cartFooter">
