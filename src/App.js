@@ -26,19 +26,21 @@ function App() {
             </div>
           </div>
 
-          <ul className="cartFooter">
-            <li>
-              <span>Total price:</span>
-              <div></div>
-              <b>530 uah</b>
-            </li>
-            <li>
-              <span>Discount:</span>
-              <div></div>
-              <b>20 uah</b>
-            </li>
-          </ul>
-          <button>Place an order</button>
+          <div className="cartFooter">
+            <ul>
+              <li>
+                <span>Total price:</span>
+                <div></div>
+                <b>530 uah</b>
+              </li>
+              <li>
+                <span>Discount:</span>
+                <div></div>
+                <b>20 uah</b>
+              </li>
+            </ul>
+            <button>Place an order</button>
+          </div>
 
         </div>
       </div>
