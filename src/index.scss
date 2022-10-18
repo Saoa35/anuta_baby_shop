@@ -44,6 +44,8 @@ body {
         h2 {
           margin: 0; 
           margin-bottom: 30px;
+          display: flex;
+          justify-content: space-between;
         }
   
         .items {
@@ -75,15 +77,7 @@ body {
             font-size: 14px;
           }
   
-          .removeBtn {
-            opacity: 0.7;
-            cursor: pointer;
-            transition: opacity 0.15s ease-in-out;
-  
-            &:hover {
-              opacity: 1;
-            }
-          }
+          
         }
   
         .cartFooter {
@@ -259,6 +253,16 @@ body {
         }
       }
     }
+  }
+}
+
+.removeBtn {
+  opacity: 0.7;
+  cursor: pointer;
+  transition: opacity 0.15s ease-in-out;
+
+  &:hover {
+    opacity: 1;
   }
 }
 
