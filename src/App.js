@@ -58,7 +58,7 @@ function App() {
         <ul className="headerRight">
           <li>
             <img src="/img/cart.svg" width={25} height={25} alt='cart'/>
-            <span style={{margin:' 0 15px'}}>1250 uah</span>
+            <span style={{margin:' 0 25px 0 20px'}}>1250 uah</span>
           </li>
           <li>
           <img src="/img/user.svg" width={25} height={25} alt='user'/>
@@ -96,6 +96,9 @@ function App() {
           </div>
 
           <div className="card">
+            <div className='favorite'>
+              <img src='/img/unliked.svg' alt="Unliked" title="Set as Favorite"/>
+            </div>
             <img width={170} height={140} style={{borderRadius:'10px'}}  src="/img/Goods/2.jpg" alt="Goods"/>
             <h5>Messerschmitt Bf.110 Night Fighter</h5>
             <div className='cardBottom'>
@@ -110,6 +113,9 @@ function App() {
           </div>
 
           <div className="card">
+            <div className='favorite'>
+              <img src='/img/unliked.svg' alt="Unliked" title="Set as Favorite"/>
+            </div>
             <img width={170} height={140} style={{borderRadius:'10px'}}  src="/img/Goods/3.jpg" alt="Goods"/>
             <h5>Bomber Boeing B-29 Superfortress</h5>
             <div className='cardBottom'>
@@ -124,6 +130,9 @@ function App() {
           </div>
 
           <div className="card">
+            <div className='favorite'>
+              <img src='/img/unliked.svg' alt="Unliked" title="Set as Favorite"/>
+            </div>
             <img width={170} height={140} style={{borderRadius:'10px'}}  src="/img/Goods/4.jpg" alt="Goods"/>
             <h5>Carrier-based Fighter Grumman F6F Hellcat</h5>
             <div className='cardBottom'>
