@@ -4,7 +4,7 @@ function Header() {
     return(
         <header>
         <div className="headerLeft">
-          <img src='/img/logo.png' width={40} heigth={40} style={{borderRadius:'20px'}} alt='logo'/>
+          <img src='/img/logo.png' width={30} heigth={30} style={{borderRadius:'20px'}} alt='logo'/>
           <div className="headerInfo">
             <h3>Anuta Baby Shop</h3>
             <p>The best goods for adults and children</p>
