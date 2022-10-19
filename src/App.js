@@ -1,14 +1,13 @@
 import { Card } from "./components/Card";
+import Cart from "./components/Cart";
 import Header from "./components/Header";
 
 function App() {
   return (
     <div className="wrapper">
 
-      <div style={{display:'none'}} className="cart-overlay">
-        
-      </div>
-
+      <Cart />
+      
       <Header />
 
       <div className="content">
