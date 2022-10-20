@@ -33,7 +33,6 @@ function App() {
             <Card key={index} title={obj.title} img={obj.img} price={obj.price} />
            )}
 
-
         </div>
       </div>
     </div>
