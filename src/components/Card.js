@@ -11,7 +11,7 @@ export function Card({ img, title, price }) {
       <div className='cardBottom'>
         <div className="cardPrice">
           <span>Price:</span>
-          <b>{price}</b>
+          <b>{price} UAH</b>
         </div>
         <button className='button'>
           <img src='/img/plus.svg' width={11} height={11} alt='Plus' title="Add to Cart"/>

@@ -13,7 +13,7 @@ function Header() {
         <ul className="headerRight">
           <li>
             <img src="/img/cart.svg" width={25} height={25} alt='cart'/>
-            <span style={{margin:' 0 25px 0 20px'}}>1250 uah</span>
+            <span style={{margin:' 0 25px 0 20px'}}>1250 UAH</span>
           </li>
           <li>
           <img src="/img/user.svg" width={25} height={25} alt='user'/>
