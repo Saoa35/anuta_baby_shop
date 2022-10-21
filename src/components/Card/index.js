@@ -4,7 +4,7 @@ export function Card(props) {
 
   return(
     <div className={styles.card}>
-      <div className={styles.favorite}>
+      <div className={styles.favorite} onClick={props.onClickFavorit}>
         <img src='/img/unliked.svg' alt="Unliked" title="Set as Favorite"/>
       </div>
       <img width={170} height={140} style={{borderRadius:'10px'}}  src={props.img} alt="Goods"/>
