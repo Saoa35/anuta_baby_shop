@@ -29,16 +29,12 @@ function App() {
        
         <div className='goods'>
 
-          {/* {arr.map((obj, index) => 
-            <Card key={index} title={obj.title} img={obj.img} price={obj.price} />
-           )} */}
-
           {arr.map((obj, index) => 
             <Card key={index} 
                   title={obj.title} 
                   img={obj.img} 
                   price={obj.price} 
-                  onClick={() => console.log(`${obj.title} was added to cart!`)} />
+                  onClickPlus={() => console.log(`${obj.title} was added to cart!`)} />
            )}
 
         </div>

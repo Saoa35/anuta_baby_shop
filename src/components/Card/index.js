@@ -14,9 +14,8 @@ export function Card(props) {
           <span>Price:</span>
           <b>{props.price} UAH</b>
         </div>
-        {/* <button className={styles.button} onClick={() => console.log(`${props.title} was added to cart!`)}> */}
         <button className={styles.button} >
-          <img src='/img/plus.svg' width={11} height={11} alt='Plus' title="Add to Cart" onClick={props.onClick}/>
+          <img src='/img/plus.svg' width={11} height={11} alt='Plus' title="Add to Cart" onClick={props.onClickPlus}/>
         </button>
       </div>
       </div>
