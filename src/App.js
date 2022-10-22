@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "./components/Card";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
@@ -23,6 +23,9 @@ const arr = [
 ]
 
 function App() {
+
+  const [cartOpened, setCartOpened] = useState(false);
+
   return (
     <div className="wrapper">
 
