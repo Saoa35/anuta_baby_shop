@@ -35,8 +35,9 @@ function App() {
                   title={obj.title} 
                   img={obj.img} 
                   price={obj.price} 
-                  onClickPlus={() => console.log(`${obj.title} was added to cart!`)} 
-                  onClickFavorit={() => console.log(`You liked ${obj.title}`)}/>
+                  // onClickPlus={() => console.log(`${obj.title} was added to cart!`)} 
+                  // onClickFavorit={() => console.log(`You liked ${obj.title}`)}
+                  />
            )}
 
         </div>
