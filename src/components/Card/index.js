@@ -25,7 +25,7 @@ export function Card(props) {
              onClick={onClickPlus} 
              src={isAdded ? '/img/btn-checked.svg' : '/img/btn-plus.svg'} 
              alt='Plus' 
-             title="Add to Cart"/>
+             title={!isAdded ? "Add to Cart" : 'Remove from Cart'}/>
       </div>
     </div>
   )
