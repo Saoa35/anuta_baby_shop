@@ -1,9 +1,14 @@
+html {
+  position: relative;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: aliceblue;
+  // position: relative;
 }
 
 * {
@@ -17,6 +22,7 @@ body {
     border-radius: 20px;
     max-width: 1080px;
     margin: 50px auto;
+    // position: relative;
   
     .cart-overlay {
       position: absolute;
@@ -27,6 +33,7 @@ body {
       height: 100%;
       background-color: rgba(0, 0, 0, 0.3);
       z-index: 1;
+      overflow: hidden;
   
       .cart {
         display:flex;
@@ -47,7 +54,7 @@ body {
         }
   
         .items {
-          flex: 1;
+          // flex: 1;
           overflow: auto;
           margin-bottom: 40px;
         }
@@ -82,6 +89,7 @@ body {
   
         .cartFooter {
           list-style: none;
+          margin-top: 50px;
           
           ul {
             padding-left: 0;

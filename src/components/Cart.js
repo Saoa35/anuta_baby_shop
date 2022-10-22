@@ -1,5 +1,5 @@
 
-function Cart(props) {
+function Cart({ onCloseCart, items }) {
 
   return(
     <div className="cart-overlay">
@@ -7,7 +7,7 @@ function Cart(props) {
         <h2>
           Cart
           <img className="removeBtn" 
-               onClick={props.onCloseCart}
+               onClick={onCloseCart}
                src="/img/btn-remove.svg" 
                alt="Close"  
                title="Close Cart"/>
@@ -15,7 +15,8 @@ function Cart(props) {
 
         <div className="items">
 
-          <div className="cartItem">
+          {items.map(obj => {
+            <div className="cartItem">
             <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src="/img/Goods/1.jpg" alt="Goods"/>
             <div style={{marginRight:'15px'}}>
               <p>Fighter Aircraft Hawker Tempest</p>
@@ -23,6 +24,7 @@ function Cart(props) {
             </div>
             <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
           </div>
+          })}
 
         </div>
 

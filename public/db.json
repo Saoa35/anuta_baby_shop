@@ -1,7 +1,7 @@
 {
     "items": [
         {"title":"Fighter Aircraft Hawker Tempest", "imgUrl":"/img/Goods/1.jpg", "price":200},
-        {"title":"Messerschmitt Bf.110 Night Fighter", "imgUrl":"/img/Goods/2.jp", "price":300},
+        {"title":"Messerschmitt Bf.110 Night Fighter", "imgUrl":"/img/Goods/2.jpg", "price":300},
         {"title":"Bomber Boeing B-29 Superfortress", "imgUrl":"/img/Goods/3.jpg", "price":650},
         {"title":"Carrier-Вased Fighter Grumman F6F Hellcat", "imgUrl":"/img/Goods/4.jpg", "price":350},
         {"title":"Attack Aircraft Ilyushin IL-2 M3", "imgUrl":"/img/Goods/5.jpg", "price":450},

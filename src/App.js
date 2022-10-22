@@ -3,24 +3,25 @@ import { Card } from "./components/Card";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
 
-const url = 'https://63540251e64783fa827d56c7.mockapi.io';
+const url = 'https://63540251e64783fa827d56c7.mockapi.io/items';
 
 function App() {
 
   const [cartOpened, setCartOpened] = useState(false);
   const [items, setItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
       .then(data => setItems(data))
-
-  },[items]);
+      .catch(error => console.log(error.mesage))
+  },[]);
 
   return (
     <div className="wrapper">
 
-      {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} />}
+      {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={setCartItems} />}
       
       <Header onClickCart={() => setCartOpened(true)} />
 
@@ -40,10 +41,7 @@ function App() {
             <Card key={index} 
                   title={obj.title} 
                   img={obj.imgUrl} 
-                  price={obj.price} 
-                  // onClickPlus={() => console.log(`${obj.title} was added to cart!`)} 
-                  // onClickFavorit={() => console.log(`You liked ${obj.title}`)}
-                  />
+                  price={obj.price} />
            )}
 
         </div>
