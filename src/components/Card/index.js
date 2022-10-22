@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import styles from './Card.module.scss';
 
 export function Card(props) {
+
+  const [isAdded, setIsAdded] = useState(false);
 
   return(
     <div className={styles.card}>
