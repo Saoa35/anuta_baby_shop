@@ -1,8 +1,10 @@
 
 function Cart() {
+  
+  // style={{display:'none'}}
 
   return(
-    <div style={{display:'none'}} className="cart-overlay">
+    <div className="cart-overlay">
       <div className='cart'>
         <h2>Cart<img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/></h2>
 
