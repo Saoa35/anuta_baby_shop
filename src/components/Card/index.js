@@ -21,8 +21,12 @@ export function Card(props) {
           <span>Price:</span>
           <b>{props.price} UAH</b>
         </div>
-          <img onClick={onClickPlus} src={isAdded ? '/img/btn-checked.svg' : '/img/plus.svg'} width={11} height={11} alt='Plus' title="Add to Cart"/>
+        <img className={styles.plus} 
+             onClick={onClickPlus} 
+             src={isAdded ? '/img/btn-checked.svg' : '/img/btn-plus.svg'} 
+             alt='Plus' 
+             title="Add to Cart"/>
       </div>
-      </div>
+    </div>
   )
 }
