@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="wrapper">
 
-      {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={setCartItems} />}
+      {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} />}
       
       <Header onClickCart={() => setCartOpened(true)} />
 
@@ -41,7 +41,9 @@ function App() {
             <Card key={index} 
                   title={obj.title} 
                   img={obj.imgUrl} 
-                  price={obj.price} />
+                  price={obj.price} 
+                  onFavorite={() => console.log('Clicked favorite')}
+                  onPlus={() => console.log('Clicked plus')}/>
            )}
 
         </div>

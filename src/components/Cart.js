@@ -1,5 +1,5 @@
 
-function Cart({ onCloseCart, items }) {
+function Cart({ onCloseCart, items = [] }) {
 
   return(
     <div className="cart-overlay">
@@ -17,10 +17,10 @@ function Cart({ onCloseCart, items }) {
 
           {items.map(obj => {
             <div className="cartItem">
-            <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src="/img/Goods/1.jpg" alt="Goods"/>
+            <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src={obj.imgUrl} alt="Goods"/>
             <div style={{marginRight:'15px'}}>
-              <p>Fighter Aircraft Hawker Tempest</p>
-              <b>200 uah</b>
+              <p>{obj.title}</p>
+              <b>{obj.price} uah</b>
             </div>
             <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
           </div>
