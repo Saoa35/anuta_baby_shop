@@ -31,7 +31,7 @@ function App() {
 
       {cartOpened ? <Cart /> : null}
       
-      <Header />
+      <Header onClickCart={() => setCartOpened(true)} />
 
       <div className="content">
 

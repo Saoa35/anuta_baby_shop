@@ -1,7 +1,5 @@
 
 function Cart() {
-  
-  // style={{display:'none'}}
 
   return(
     <div className="cart-overlay">
@@ -18,15 +16,6 @@ function Cart() {
             </div>
             <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
           </div>
-
-          {/* <div className="cartItem">
-            <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src="/img/Goods/4.jpg" alt="Goods"/>
-            <div style={{marginRight:'15px'}}>
-              <p>Carrier-based Fighter Grumman F6F Hellcat</p>
-              <b>350 uah</b>
-            </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" title="Remove from Cart"/>
-          </div> */}
 
         </div>
 

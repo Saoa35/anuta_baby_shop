@@ -21,7 +21,7 @@ export function Card(props) {
              alt='Heart' 
              title={!isLiked ? "Set as Favorite" : 'Unset from Favorite'}/>
       </div>
-      <img width={210} height={170} style={{borderRadius:'10px'}}  src={props.img} alt="Goods"/>
+      <img width={170} height={140} style={{borderRadius:'10px'}}  src={props.img} alt="Goods"/>
       <h5>{props.title}</h5>
       <div className={styles.cardBottom}>
         <div className={styles.cardPrice}>
