@@ -8,7 +8,7 @@ const arr = [
   {title:'Messerschmitt Bf.110 Night Fighter', img:'/img/Goods/2.jpg', price:'300'},
   {title:'Bomber Boeing B-29 Superfortress', img:'/img/Goods/3.jpg', price:'650'},
   {title:'Carrier-Вased Fighter Grumman F6F Hellcat', img:'/img/Goods/4.jpg', price:'350'},
-  {title:'Attack Aircraft Ilyushin IL-2', img:'/img/Goods/5.jpg', price:'450'},
+  {title:'Attack Aircraft Ilyushin IL-2 M3', img:'/img/Goods/5.jpg', price:'450'},
   {title:'Fighter Aircraft Messershmitt Bf 109 G-2', img:'/img/Goods/6.jpg', price:'330'},
   {title:'I16 Type 18 Fighter Aircraft', img:'/img/Goods/7.jpg', price:'300'},
   {title:'Multirole Fighter-Bomber DH.98 Mosquito', img:'/img/Goods/8.jpg', price:'480'},
@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="wrapper">
 
-      <Cart />
+      {cartOpened ? <Cart /> : null}
       
       <Header />
 
