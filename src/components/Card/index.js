@@ -32,7 +32,7 @@ export function Card(props) {
              onClick={onClickPlus} 
              src={isAdded ? '/img/btn-checked.svg' : '/img/btn-plus.svg'} 
              alt='Plus' 
-             title={!isAdded ? "Add to Cart" : 'Remove from Cart'}/>
+             title={!isAdded ? "Add to Cart" : 'Item was Added to Cart'}/>
       </div>
     </div>
   )

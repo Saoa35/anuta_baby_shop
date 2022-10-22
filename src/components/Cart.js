@@ -1,10 +1,17 @@
 
-function Cart() {
+function Cart(props) {
 
   return(
     <div className="cart-overlay">
       <div className='cart'>
-        <h2>Cart<img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/></h2>
+        <h2>
+          Cart
+          <img className="removeBtn" 
+               onClick={props.onCloseCart}
+               src="/img/btn-remove.svg" 
+               alt="Close"  
+               title="Close Cart"/>
+        </h2>
 
         <div className="items">
 

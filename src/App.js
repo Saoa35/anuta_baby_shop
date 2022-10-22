@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="wrapper">
 
-      {cartOpened ? <Cart /> : null}
+      {cartOpened ? <Cart onCloseCart={() => setCartOpened(false)} /> : null}
       
       <Header onClickCart={() => setCartOpened(true)} />
 
