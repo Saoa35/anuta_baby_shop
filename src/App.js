@@ -15,12 +15,13 @@ function App() {
     fetch(url)
       .then(res => res.json())
       .then(data => setItems(data))
-      .catch(error => console.log(error.mesage))
+      .catch(error => console.log(error.mesage));
   },[]);
 
   const onAddToCart = (obj) => {
-    console.log(obj)
-  }
+    setCartItems(prev => [...prev, obj]);
+    // setCartItems([...cartItems, obj]);
+  };
 
   return (
     <div className="wrapper">
@@ -47,7 +48,8 @@ function App() {
                   img={item.imgUrl} 
                   price={item.price} 
                   onFavorite={() => console.log('Clicked favorite')}
-                  onPlus={onAddToCart}/>
+                  onPlus={obj => onAddToCart(obj)}
+              />
            )}
 
         </div>

@@ -7,7 +7,7 @@ export function Card({ title, img, price, onPlus, onFavorite }) {
   const [isLiked, setIsLiked] = useState(false);
 
   const onClickPlus = () => {
-    onPlus({title, img, price});
+    onPlus({title, img, price})
     setIsAdded(!isAdded);
   };
 
