@@ -55,9 +55,16 @@ body {
           align-items: center;
           justify-content: center;
           flex-direction: column;
+          text-align: center;
         
           p {
             opacity: 0.6;
+            width: 180px;
+          }
+
+          .greenButton {
+            width: 245px;
+            margin-top: 20px;
           }
         }
   

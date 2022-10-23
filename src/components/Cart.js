@@ -16,9 +16,9 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
         <div className="cartEmpty">
           <img width={240} height={180} style={{marginBottom:'20px'}} src="/img/empty-cart.png" alt="Empty Cart" />
           <h2>Cart is empty</h2>
-          <p>Add at least one item to place an order</p>
+          <p>Add at least one item, to place an order</p>
           <button className="greenButton">
-            <img />
+            <img src="/img/arrow.svg" alt="Arrow" />
             Go Back
           </button>
         </div>
