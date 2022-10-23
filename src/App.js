@@ -39,14 +39,14 @@ function App() {
   };
 
   const onRemoveFromCart = (id) => {
-    fetch(`${urlCart}/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify(id)
-    });
-    setCartItems(prev => [...prev, id]);
+    // fetch(`${urlCart}/${id}`, {
+    //   method: 'DELETE',
+    //   headers: {
+    //     'Content-Type': 'application/json;charset=utf-8'
+    //   },
+    //   body: JSON.stringify(id)
+    // });
+    setCartItems(prev => prev.filter(item => item.id !==id));
   };
 
   const onChangeInput = (event) => {

@@ -1,5 +1,5 @@
 
-function Cart({ onCloseCart, items = [] }) {
+function Cart({ onCloseCart, onRemove, items = [] }) {
 
   return(
     <div className="cart-overlay">
@@ -22,7 +22,7 @@ function Cart({ onCloseCart, items = [] }) {
               <p>{obj.title}</p>
               <b>{obj.price} uah</b>
             </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
+            <img className="removeBtn" onClick={() => onRemove(obj.id)} src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
           </div>
           ))}
 
