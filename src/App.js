@@ -41,31 +41,24 @@ function App() {
           <h1>{serchValue ? `Serching: ${serchValue}` : 'All Items'}</h1>
           <div className="search-block">
             <img src='/img/search.svg' alt='Search'/>
-            <input onChange={onChangeInput} placeholder="Searh..."/>
+            <input onChange={onChangeInput} value={serchValue} placeholder="Searh..."/>
           </div>
         </div>
        
         <div className='goods'>
 
-        {items.map((item, index) => 
-            <Card key={index} 
-                  title={item.title} 
-                  img={item.imgUrl} 
-                  price={item.price} 
-                  onFavorite={() => console.log('Clicked favorite')}
-                  onPlus={obj => onAddToCart(obj)}
+          {items
+            .filter(item => item.title.toUpperCase().includes(serchValue.toUpperCase()))
+            .map((item, index) => 
+              <Card key={index} 
+                    title={item.title} 
+                    img={item.imgUrl} 
+                    price={item.price} 
+                    onFavorite={() => console.log('Clicked favorite')}
+                    onPlus={obj => onAddToCart(obj)}
               />
-           )}
-
-          {/* {serchValue ? {items.map((item, index) => 
-            <Card key={index} 
-                  title={item.title} 
-                  img={item.imgUrl} 
-                  price={item.price} 
-                  onFavorite={() => console.log('Clicked favorite')}
-                  onPlus={obj => onAddToCart(obj)}
-              /> : adfsdf
-           )}} */}
+            )
+          }
 
         </div>
       </div>
