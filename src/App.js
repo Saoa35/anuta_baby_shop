@@ -3,7 +3,8 @@ import { Card } from "./components/Card";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
 
-const url = 'https://63540251e64783fa827d56c7.mockapi.io/items';
+const urlItems = 'https://63540251e64783fa827d56c7.mockapi.io/items';
+const urlCart = 'https://63540251e64783fa827d56c7.mockapi.io/cart';
 
 function App() {
 
@@ -13,13 +14,26 @@ function App() {
   const [serchValue, setSerchValue] = useState('');
 
   useEffect(() => {
-    fetch(url)
+    fetch(urlItems)
       .then(res => res.json())
       .then(data => setItems(data))
       .catch(error => console.log(error.mesage));
+
+    fetch(urlCart)
+    .then(res => res.json())
+    .then(data => setCartItems(data))
+    .catch(error => console.log(error.mesage));
   },[]);
 
   const onAddToCart = (obj) => {
+    fetch(urlCart, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(obj)
+});
+
     setCartItems(prev => [...prev, obj]);
     // setCartItems([...cartItems, obj]);
   };
