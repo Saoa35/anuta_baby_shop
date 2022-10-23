@@ -32,20 +32,31 @@ function App() {
           'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify(obj)
-});
+    });
 
     setCartItems(prev => [...prev, obj]);
     // setCartItems([...cartItems, obj]);
   };
 
+  const onRemoveFromCart = (id) => {
+    fetch(`${urlCart}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(id)
+    });
+    setCartItems(prev => [...prev, id]);
+  };
+
   const onChangeInput = (event) => {
     setSerchValue(event.target.value);
-  }
+  };
 
   return (
     <div className="wrapper">
 
-      {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} />}
+      {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} />}
       
       <Header onClickCart={() => setCartOpened(true)} />
 
