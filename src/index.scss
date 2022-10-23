@@ -233,3 +233,13 @@ body {
   }
 }
 
+
+@media (max-width: 570px) {
+  header {
+    flex-direction: column;
+  }
+
+  .content-header {
+    flex-direction: column;
+  }
+}

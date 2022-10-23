@@ -10,6 +10,7 @@ function App() {
   const [cartOpened, setCartOpened] = useState(false);
   const [items, setItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [serchValue, setSerchValue] = useState('');
 
   useEffect(() => {
     fetch(url)
@@ -23,6 +24,10 @@ function App() {
     // setCartItems([...cartItems, obj]);
   };
 
+  const onChangeInput = (event) => {
+    setSerchValue(event.target.value);
+  }
+
   return (
     <div className="wrapper">
 
@@ -33,16 +38,16 @@ function App() {
       <div className="content">
 
         <div className="content-header">
-          <h1>All goods</h1>
+          <h1>{serchValue ? `Serching: ${serchValue}` : 'All Items'}</h1>
           <div className="search-block">
             <img src='/img/search.svg' alt='Search'/>
-            <input placeholder="Searh..."/>
+            <input onChange={onChangeInput} placeholder="Searh..."/>
           </div>
         </div>
        
         <div className='goods'>
 
-          {items.map((item, index) => 
+        {items.map((item, index) => 
             <Card key={index} 
                   title={item.title} 
                   img={item.imgUrl} 
@@ -51,6 +56,16 @@ function App() {
                   onPlus={obj => onAddToCart(obj)}
               />
            )}
+
+          {/* {serchValue ? {items.map((item, index) => 
+            <Card key={index} 
+                  title={item.title} 
+                  img={item.imgUrl} 
+                  price={item.price} 
+                  onFavorite={() => console.log('Clicked favorite')}
+                  onPlus={obj => onAddToCart(obj)}
+              /> : adfsdf
+           )}} */}
 
         </div>
       </div>
