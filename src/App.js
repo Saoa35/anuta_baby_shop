@@ -5,6 +5,8 @@ import Header from "./components/Header";
 
 const urlItems = 'https://63540251e64783fa827d56c7.mockapi.io/items';
 const urlCart = 'https://63540251e64783fa827d56c7.mockapi.io/cart';
+const urlFavorites = 'https://63540251e64783fa827d56c7.mockapi.io/favorites';
+
 
 function App() {
 
@@ -39,10 +41,9 @@ function App() {
     // setCartItems([...cartItems, obj]);
   };
 
-  // `${urlCart}/${id}`
 
   const onRemoveFromCart = (id) => {
-    fetch(`https://63540251e64783fa827d56c7.mockapi.io/cart/${id}`, {
+    fetch(`${urlCart}/${id}`, {
       method: 'DELETE',
     })
     .then(response => response.json())
@@ -53,6 +54,17 @@ function App() {
 
   const onChangeInput = (event) => {
     setSerchValue(event.target.value);
+  };
+
+  const onAddToFavorite = (obj) => {
+    fetch(urlFavorites, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(obj)
+    });
+    setFavorites(prev => [...prev, obj]);
   };
 
   return (
