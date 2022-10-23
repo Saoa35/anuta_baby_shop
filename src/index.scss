@@ -49,6 +49,17 @@ body {
           display: flex;
           justify-content: space-between;
         }
+
+        .cartEmpty {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        
+          p {
+            opacity: 0.6;
+          }
+        }
   
         .items {
           // flex: 1;

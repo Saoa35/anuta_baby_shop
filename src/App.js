@@ -39,13 +39,15 @@ function App() {
   };
 
   const onRemoveFromCart = (id) => {
-    // fetch(`${urlCart}/${id}`, {
-    //   method: 'DELETE',
-    //   headers: {
-    //     'Content-Type': 'application/json;charset=utf-8'
-    //   },
-    //   body: JSON.stringify(id)
-    // });
+    fetch(`${urlCart}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      },
+    })
+    .then(response => response.json())
+    .catch(err => console.log(err));
+
     setCartItems(prev => prev.filter(item => item.id !==id));
   };
 
