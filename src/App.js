@@ -18,8 +18,8 @@ function App() {
       .catch(error => console.log(error.mesage))
   },[]);
 
-  const onAddToCart = () => {
-    // setCartItems
+  const onAddToCart = (obj) => {
+    console.log(obj)
   }
 
   return (
@@ -41,11 +41,11 @@ function App() {
        
         <div className='goods'>
 
-          {items.map((obj, index) => 
+          {items.map((item, index) => 
             <Card key={index} 
-                  title={obj.title} 
-                  img={obj.imgUrl} 
-                  price={obj.price} 
+                  title={item.title} 
+                  img={item.imgUrl} 
+                  price={item.price} 
                   onFavorite={() => console.log('Clicked favorite')}
                   onPlus={onAddToCart}/>
            )}
