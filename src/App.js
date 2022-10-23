@@ -12,6 +12,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [serchValue, setSerchValue] = useState('');
+  const [favorites, setFavorites] =useState([]);
 
   useEffect(() => {
     fetch(urlItems)
@@ -38,12 +39,11 @@ function App() {
     // setCartItems([...cartItems, obj]);
   };
 
+  // `${urlCart}/${id}`
+
   const onRemoveFromCart = (id) => {
-    fetch(`${urlCart}/${id}`, {
+    fetch(`https://63540251e64783fa827d56c7.mockapi.io/cart/${id}`, {
       method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8'
-      },
     })
     .then(response => response.json())
     .catch(err => console.log(err));

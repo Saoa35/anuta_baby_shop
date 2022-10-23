@@ -20,7 +20,7 @@ export function Card({ title, img, price, onPlus, onFavorite }) {
       <div className={styles.favorite} onClick={onClickFavorit}>
         <img src={isLiked ? '/img/liked.svg' : '/img/unliked.svg'} 
              alt='Heart' 
-             title={!isLiked ? "Set as Favorite" : 'Unset from Favorite'}/>
+             title={!isLiked ? "Set as Favorite" : 'Сhosen as Favorite'}/>
       </div>
       <img width={170} height={140} style={{borderRadius:'10px'}}  src={img} alt="Goods"/>
       <h5>{title}</h5>
