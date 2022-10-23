@@ -13,17 +13,8 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
                title="Close Cart"/>
         </h2>
 
-        <div className="cartEmpty">
-          <img width={240} height={180} style={{marginBottom:'20px'}} src="/img/empty-cart.png" alt="Empty Cart" />
-          <h2>Cart is empty</h2>
-          <p>Add at least one item, to place an order</p>
-          <button className="greenButton">
-            <img src="/img/arrow.svg" alt="Arrow" />
-            Go Back
-          </button>
-        </div>
-
-        <div className="items">
+        {items.length > 0 ? ( <div>
+          <div className="items">
           {items.map((obj, index) => (
             <div className="cartItem" key={index}>
             <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src={obj.img} alt="Goods"/>
@@ -34,9 +25,8 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
             <img className="removeBtn" onClick={() => onRemove(obj.id)} src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
           </div>
           ))}
-        </div>
-
-        <div className="cartFooter">
+          </div>
+          <div className="cartFooter">
           <ul>
             <li>
               <span>Total items:</span>
@@ -50,7 +40,19 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
             </li>
           </ul>
           <button className="greenButton">Place an order <img src="/img/arrow.svg" alt="Arrow"/></button>
-        </div>
+          </div>
+          </div>
+          ) : (
+          <div className="cartEmpty">
+            <img width={240} height={180} style={{marginBottom:'20px'}} src="/img/empty-cart.png" alt="Empty Cart" />
+            <h2>Cart is empty</h2>
+            <p>Add at least one item, to place an order</p>
+            <button onClick={onCloseCart} className="greenButton">
+              <img src="/img/arrow.svg" alt="Arrow" />
+              Go Back
+            </button>
+          </div>)  
+        }
 
       </div>
   </div>
