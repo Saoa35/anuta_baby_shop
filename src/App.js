@@ -18,6 +18,10 @@ function App() {
       .catch(error => console.log(error.mesage))
   },[]);
 
+  const onAddToCart = () => {
+    // setCartItems
+  }
+
   return (
     <div className="wrapper">
 
@@ -43,7 +47,7 @@ function App() {
                   img={obj.imgUrl} 
                   price={obj.price} 
                   onFavorite={() => console.log('Clicked favorite')}
-                  onPlus={() => console.log('Clicked plus')}/>
+                  onPlus={onAddToCart}/>
            )}
 
         </div>
