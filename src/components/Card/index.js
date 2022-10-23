@@ -12,6 +12,7 @@ export function Card({ title, img, price, onPlus, onFavorite }) {
   };
 
   const onClickFavorit = () => {
+    onFavorite({title, img, price})
     setIsLiked(!isLiked);
   }
 

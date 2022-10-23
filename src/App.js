@@ -93,7 +93,7 @@ function App() {
                     title={item.title} 
                     img={item.imgUrl} 
                     price={item.price} 
-                    onFavorite={() => console.log('Clicked favorite')}
+                    onFavorite={obj => onAddToFavorite(obj)}
                     onPlus={obj => onAddToCart(obj)}
               />
             )
