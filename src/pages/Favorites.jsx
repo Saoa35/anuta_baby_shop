@@ -1,21 +1,27 @@
-import  { Card }  from "../components/Card";
+import { Card } from "../components/Card";
 
-function Favorites({  }) {
+
+function Favorites({ items }) {
   return(
     <div className="content">
 
       <div className="content-header">
-        <h1>{serchValue ? `Serching: ${serchValue}` : 'All Items'}</h1>
-        <div className="search-block">
-          <img src='/img/search.svg' alt='Search'/>
-          <input onChange={onChangeInput} value={serchValue} placeholder="Searh..."/>
-        </div>
+       <h1>My Favorites</h1>
       </div>
       
       <div className='goods'>
 
-        
-
+        {items.map((item, index) => (
+                    <Card key={index} 
+                        title={item.title} 
+                        img={item.imgUrl} 
+                        price={item.price} 
+                //   onFavorite={obj => onAddToFavorite(obj)}
+                //   onPlus={obj => onAddToCart(obj)}
+                    />      
+                )
+            )
+            }
       </div>
     </div>
   )

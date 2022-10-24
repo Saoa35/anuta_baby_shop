@@ -5,10 +5,7 @@ import Header from "./components/Header";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 
-const urlItems = 'https://63540251e64783fa827d56c7.mockapi.io/items';
-const urlCart = 'https://63540251e64783fa827d56c7.mockapi.io/cart';
-const urlFavorites = 'https://63540251e64783fa827d56c7.mockapi.io/favorites';
-
+const url = 'https://63540251e64783fa827d56c7.mockapi.io';
 
 function App() {
 
@@ -19,19 +16,19 @@ function App() {
   const [favorites, setFavorites] =useState([]);
 
   useEffect(() => {
-    fetch(urlItems)
+    fetch(`${url}/items`)
       .then(res => res.json())
       .then(data => setItems(data))
       .catch(error => console.log(error.mesage));
 
-    fetch(urlCart)
-    .then(res => res.json())
-    .then(data => setCartItems(data))
-    .catch(error => console.log(error.mesage));
+    fetch(`${url}/cart`)
+      .then(res => res.json())
+      .then(data => setCartItems(data))
+      .catch(error => console.log(error.mesage));
   },[]);
 
   const onAddToCart = (obj) => {
-    fetch(urlCart, {
+    fetch(`${url}/cart`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
@@ -45,11 +42,11 @@ function App() {
 
 
   const onRemoveFromCart = (id) => {
-    fetch(`${urlCart}/${id}`, {
+    fetch(`${url}/cart/${id}`, {
       method: 'DELETE',
-    })
-    .then(response => response.json())
-    .catch(err => console.log(err));
+      })
+      .then(response => response.json())
+      .catch(err => console.log(err));
 
     setCartItems(prev => prev.filter(item => item.id !== id));
   };
@@ -59,7 +56,7 @@ function App() {
   };
 
   const onAddToFavorite = (obj) => {
-    fetch(urlFavorites, {
+    fetch(`${url}/favorites`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
@@ -85,7 +82,7 @@ function App() {
         </Route>
 
         <Route path="/favorites" exact>
-          <Favorites />
+          <Favorites items={favorites} />
         </Route>
       
     </div>
