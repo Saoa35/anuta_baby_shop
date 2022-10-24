@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Card } from "./components/Card";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
@@ -75,9 +75,11 @@ function App() {
       
       <Header onClickCart={() => setCartOpened(true)} />
 
-      {/* <Route>
+      <Routes>
+        <Route path="/favorites" exact>This is a test information</Route>
+      </Routes>
 
-      </Route> */}
+      
 
       <div className="content">
 
