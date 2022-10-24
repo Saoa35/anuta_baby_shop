@@ -11,8 +11,8 @@ function Header(props) {
           </div>
         </div>
         <ul className="headerRight">
-          <li onClick={props.onClickCart}>
-            <img src="/img/cart.svg" width={25} height={25} alt='cart'/>
+          <li>
+            <img onClick={props.onClickCart} src="/img/cart.svg" width={25} height={25} alt='cart'/>
             <span style={{margin:'0 20px'}}>1250 UAH</span>
           </li>
           <li>
