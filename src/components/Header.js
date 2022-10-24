@@ -4,13 +4,18 @@ function Header(props) {
     
     return(
         <header>
-        <div className="headerLeft">
-          <img src='/img/logo.png' width={30} heigth={30} style={{borderRadius:'20px'}} alt='logo'/>
-          <div className="headerInfo">
-            <h3>Anuta Baby Shop</h3>
-            <p>The best goods for adults and children</p>
+        
+          <div className="headerLeft">
+          <Link to='/'>
+            <img src='/img/logo.png' width={30} heigth={30} style={{borderRadius:'20px'}} alt='logo'/>
+          </Link>
+            <div className="headerInfo">
+              <h3>Anuta Baby Shop</h3>
+              <p>The best goods for adults and children</p>
+            </div>
           </div>
-        </div>
+        
+        
         <ul className="headerRight">
           <li>
             <img onClick={props.onClickCart} src="/img/cart.svg" width={25} height={25} alt='cart' title="Open Cart"/>

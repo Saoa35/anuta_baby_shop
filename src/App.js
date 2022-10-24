@@ -75,9 +75,9 @@ function App() {
       
       <Header onClickCart={() => setCartOpened(true)} />
 
-      <Route>
-        
-      </Route>
+      {/* <Route>
+
+      </Route> */}
 
       <div className="content">
 
