@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function Header(props) {
     
@@ -16,7 +17,9 @@ function Header(props) {
             <span style={{margin:'0 20px'}}>1250 UAH</span>
           </li>
           <li>
+           <Link to="/favorites">
             <img src="/img/heart.svg" style={{marginRight:'20px'}} width={25} height={25} alt='heart' title="Open Favorites"/>
+           </Link>
           </li>
           <li>
             <img src="/img/user.svg" width={25} height={25} alt='user' title="Log in"/>

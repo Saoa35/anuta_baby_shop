@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Route } from "react-router-dom";
 import { Card } from "./components/Card";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
@@ -73,6 +74,10 @@ function App() {
       {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} />}
       
       <Header onClickCart={() => setCartOpened(true)} />
+
+      <Route>
+        
+      </Route>
 
       <div className="content">
 
