@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Route } from "react-router-dom";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
+import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 
 const urlItems = 'https://63540251e64783fa827d56c7.mockapi.io/items';
@@ -74,18 +75,18 @@ function App() {
       {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} />}
       
       <Header onClickCart={() => setCartOpened(true)} />
+        
+      <Route path="/" exact>
+          <Home serchValue={serchValue} 
+                items={items}
+                onChangeInput={onChangeInput}
+                onAddToFavorite={onAddToFavorite}
+                onAddToCart={onAddToCart} />
+        </Route>
 
-      
-        <Switch>
-          <Route path="/" exact>
-              <Home serchValue={serchValue} 
-                    items={items}
-                    onChangeInput={onChangeInput}
-                    onAddToFavorite={onAddToFavorite}
-                    onAddToCart={onAddToCart} />
-            </Route>
-        </Switch>
-    
+        <Route path="/favorites" exact>
+          <Favorites />
+        </Route>
       
     </div>
   );

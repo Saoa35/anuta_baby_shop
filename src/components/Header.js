@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 function Header(props) {
     
     return(
         <header>
         
           <div className="headerLeft">
-          <Link to='/'>
-            <img src='/img/logo.png' width={30} heigth={30} style={{borderRadius:'20px'}} alt='logo'/>
-          </Link>
+            <Link to='/'>
+              <img src='/img/logo.png' width={30} heigth={30} style={{borderRadius:'20px'}} alt='logo'/>
+            </Link>
             <div className="headerInfo">
               <h3>Anuta Baby Shop</h3>
               <p>The best goods for adults and children</p>
