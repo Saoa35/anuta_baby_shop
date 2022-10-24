@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import { Card } from "./components/Card";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Cart from "./components/Cart";
 import Header from "./components/Header";
+import Home from "./pages/Home";
 
 const urlItems = 'https://63540251e64783fa827d56c7.mockapi.io/items';
 const urlCart = 'https://63540251e64783fa827d56c7.mockapi.io/cart';
@@ -75,33 +75,18 @@ function App() {
       
       <Header onClickCart={() => setCartOpened(true)} />
 
-      <div className="content">
-
-        <div className="content-header">
-          <h1>{serchValue ? `Serching: ${serchValue}` : 'All Items'}</h1>
-          <div className="search-block">
-            <img src='/img/search.svg' alt='Search'/>
-            <input onChange={onChangeInput} value={serchValue} placeholder="Searh..."/>
-          </div>
-        </div>
-       
-        <div className='goods'>
-
-          {items
-            .filter(item => item.title.toUpperCase().includes(serchValue.toUpperCase()))
-            .map((item, index) => 
-              <Card key={index} 
-                    title={item.title} 
-                    img={item.imgUrl} 
-                    price={item.price} 
-                    onFavorite={obj => onAddToFavorite(obj)}
-                    onPlus={obj => onAddToCart(obj)}
-              />
-            )
-          }
-
-        </div>
-      </div>
+      
+        <Switch>
+          <Route path="/" exact>
+              <Home serchValue={serchValue} 
+                    items={items}
+                    onChangeInput={onChangeInput}
+                    onAddToFavorite={onAddToFavorite}
+                    onAddToCart={onAddToCart} />
+            </Route>
+        </Switch>
+    
+      
     </div>
   );
 }
