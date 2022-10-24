@@ -75,12 +75,6 @@ function App() {
       
       <Header onClickCart={() => setCartOpened(true)} />
 
-      <Routes>
-        <Route path="/favorites" exact>This is a test information</Route>
-      </Routes>
-
-      
-
       <div className="content">
 
         <div className="content-header">
