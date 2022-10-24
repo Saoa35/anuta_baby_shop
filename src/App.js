@@ -49,7 +49,7 @@ function App() {
     .then(response => response.json())
     .catch(err => console.log(err));
 
-    setCartItems(prev => prev.filter(item => item.id !==id));
+    setCartItems(prev => prev.filter(item => item.id !== id));
   };
 
   const onChangeInput = (event) => {
