@@ -1,9 +1,9 @@
 import  { Card }  from "../components/Card";
 
 function Home({ serchValue, items, onChangeInput, onAddToFavorite, onAddToCart }) {
+
   return(
     <div className="content">
-
       <div className="content-header">
         <h1>{serchValue ? `Serching: ${serchValue}` : 'All Items'}</h1>
         <div className="search-block">
@@ -26,7 +26,6 @@ function Home({ serchValue, items, onChangeInput, onAddToFavorite, onAddToCart }
             />
           )
         }
-
       </div>
     </div>
   )

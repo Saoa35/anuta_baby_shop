@@ -66,6 +66,8 @@ function App() {
     setFavorites(prev => [...prev, obj]);
   };
 
+  console.log(favorites);
+
   return (
     <div className="wrapper">
 
