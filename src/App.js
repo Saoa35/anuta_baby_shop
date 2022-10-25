@@ -25,6 +25,11 @@ function App() {
       .then(res => res.json())
       .then(data => setCartItems(data))
       .catch(error => console.log(error.mesage));
+
+    fetch(`${url}/favorites`)
+    .then(res => res.json())
+    .then(data => setFavorites(data))
+    .catch(error => console.log(error.mesage));
   },[]);
 
   const onAddToCart = (obj) => {
@@ -46,7 +51,6 @@ function App() {
       method: 'DELETE',
       })
       .then(response => response.json())
-      .catch(err => console.log(err));
 
     setCartItems(prev => prev.filter(item => item.id !== id));
   };
