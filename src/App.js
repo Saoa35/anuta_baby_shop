@@ -70,8 +70,6 @@ function App() {
     setFavorites(prev => [...prev, obj]);
   };
 
-  console.log(favorites);
-
   return (
     <div className="wrapper">
 
@@ -80,16 +78,17 @@ function App() {
       <Header onClickCart={() => setCartOpened(true)} />
         
       <Route path="/" exact>
-          <Home serchValue={serchValue} 
-                items={items}
-                onChangeInput={onChangeInput}
-                onAddToFavorite={onAddToFavorite}
-                onAddToCart={onAddToCart} />
-        </Route>
+        <Home 
+          serchValue={serchValue} 
+          items={items}
+          onChangeInput={onChangeInput}
+          onAddToFavorite={onAddToFavorite}
+          onAddToCart={onAddToCart} />
+      </Route>
 
-        <Route path="/favorites" exact>
-          <Favorites items={favorites} />
-        </Route>
+      <Route path="/favorites" exact>
+        <Favorites items={favorites} />
+      </Route>
       
     </div>
   );

@@ -3,8 +3,6 @@ import { Card } from "../components/Card";
 
 function Favorites({ items }) {
 
-  // console.log(items);
-
   return(
     <div className="content">
 
@@ -17,7 +15,7 @@ function Favorites({ items }) {
         {items.map((item, index) => (
                     <Card key={index} 
                         title={item.title} 
-                        img={item.imgUrl} 
+                        img={item.img} 
                         price={item.price} 
                 //   onFavorite={obj => onAddToFavorite(obj)}
                 //   onPlus={obj => onAddToCart(obj)}
