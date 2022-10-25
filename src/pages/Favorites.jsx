@@ -2,6 +2,9 @@ import { Card } from "../components/Card";
 
 
 function Favorites({ items }) {
+
+  console.log(items);
+  
   return(
     <div className="content">
 
