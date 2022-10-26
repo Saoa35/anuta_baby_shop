@@ -29,7 +29,7 @@ body {
       height: 100%;
       background-color: rgba(0, 0, 0, 0.3);
       z-index: 1;
-      overflow: hidden;
+      // overflow: hidden;
   
       .cart {
         display:flex;
@@ -41,14 +41,20 @@ body {
         right: 0;
         background: #ffffff;
         box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-        padding: 30px;
-        // overflow: hidden;
+
+        .cartField {
+          display:flex;
+          flex-direction: column;
+          overflow: hidden;
+          width: 385px;
+          padding: 30px;
+        }
   
         h2 {
           margin: 0; 
-          margin-bottom: 30px;
           display: flex;
           justify-content: space-between;
+          padding: 30px;
         }
 
         .cartEmpty {
