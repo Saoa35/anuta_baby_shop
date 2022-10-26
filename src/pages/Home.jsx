@@ -17,12 +17,14 @@ function Home({ serchValue, items, onChangeInput, onAddToFavorite, onAddToCart }
         {items
           .filter(item => item.title.toUpperCase().includes(serchValue.toUpperCase()))
           .map((item, index) => 
-            <Card key={index} 
-                  title={item.title} 
-                  img={item.imgUrl} 
-                  price={item.price} 
-                  onFavorite={obj => onAddToFavorite(obj)}
-                  onPlus={obj => onAddToCart(obj)}
+            <Card 
+              key={index} 
+              id={item.id}
+              title={item.title} 
+              img={item.imgUrl} 
+              price={item.price} 
+              onFavorite={obj => onAddToFavorite(obj)}
+              onPlus={obj => onAddToCart(obj)}
             />
           )
         }
