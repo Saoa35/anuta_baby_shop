@@ -60,21 +60,25 @@ function App() {
   };
 
   const onAddToFavorite = async (obj) => {
-    if(favorites.find(object => object.id === obj.id)) {
-      fetch(`${url}/favorites/${obj.id}`, {
-        method: 'DELETE',
-        })
-        .then(response => response.json());
-        setFavorites(prev => prev.filter(item => item.id !== obj.id));
-    } else {
-      const {data} = await fetch(`${url}/favorites`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(obj)
-    });
-    setFavorites(prev => [...prev, data]);
+    try {
+      if(favorites.find(object => object.id === obj.id)) {
+        fetch(`${url}/favorites/${obj.id}`, {
+          method: 'DELETE',
+          })
+          .then(response => response.json());
+          setFavorites(prev => prev.filter(item => item.id !== obj.id));
+      } else {
+        const {data} = await fetch(`${url}/favorites`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(obj)
+      });
+      setFavorites(prev => [...prev, data]);
+      }
+    } catch (error) {
+      console.log('Item could not be added to Favorites');
     }
   };
 
