@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './Card.module.scss';
 
-export function Card({ title, img, price, onPlus, onFavorite }) {
+export function Card({ title, img, price, onPlus, onFavorite, isFavorite }) {
 
   const [isAdded, setIsAdded] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
