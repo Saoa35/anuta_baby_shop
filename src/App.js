@@ -33,16 +33,27 @@ function App() {
   },[]);
 
   const onAddToCart = (obj) => {
-    fetch(`${url}/cart`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(obj)
-    });
-
-    setCartItems(prev => [...prev, obj]);
+    try {
+      if(cartItems.find(item => item.id === obj.id)) {
+        fetch(`${url}/cart/${obj.id}`, {
+          method: 'DELETE',
+          })
+          .then(response => response.json())
+        setCartItems(prev => prev.filter(item => item.id !== obj.id));
+      } else {
+        fetch(`${url}/cart`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(obj)
+      });
+      setCartItems(prev => [...prev, obj]);
     // setCartItems([...cartItems, obj]);
+      }
+    } catch (error) {
+      console.log();
+    }
   };
 
 

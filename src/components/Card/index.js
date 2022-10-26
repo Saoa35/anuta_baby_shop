@@ -21,7 +21,7 @@ export function Card({ id, title, img, price, onPlus, onFavorite, isFavorite = f
       <div className={styles.favorite} onClick={onClickFavorite}>
         <img src={isLiked ? '/img/liked.svg' : '/img/unliked.svg'} 
              alt='Heart' 
-             title={!isLiked ? "Set as Favorite" : 'Сhosen as Favorite'}/>
+             title={!isLiked ? "Set as Favorite" : 'Delete from Favorite'}/>
       </div>
       <img width={170} height={140} style={{borderRadius:'10px'}}  src={img} alt="Goods"/>
       <h5>{title}</h5>
@@ -34,7 +34,7 @@ export function Card({ id, title, img, price, onPlus, onFavorite, isFavorite = f
              onClick={onClickPlus} 
              src={isAdded ? '/img/btn-checked.svg' : '/img/btn-plus.svg'} 
              alt='Plus' 
-             title={!isAdded ? "Add to Cart" : 'Item was Added to Cart'}/>
+             title={!isAdded ? "Add to Cart" : 'Delete from Cart'}/>
       </div>
     </div>
   )
