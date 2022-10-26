@@ -1,6 +1,6 @@
 import  { Card }  from "../components/Card";
 
-function Home({ serchValue, items, onChangeInput, onAddToFavorite, onAddToCart }) {
+function Home({ cartItems, serchValue, items, onChangeInput, onAddToFavorite, onAddToCart }) {
 
   return(
     <div className="content">
@@ -23,6 +23,7 @@ function Home({ serchValue, items, onChangeInput, onAddToFavorite, onAddToCart }
               title={item.title} 
               img={item.imgUrl} 
               price={item.price} 
+              wasAdded={cartItems.some(obj => obj.id === item.id)}
               onFavorite={obj => onAddToFavorite(obj)}
               onPlus={obj => onAddToCart(obj)}
             />

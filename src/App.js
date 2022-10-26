@@ -34,12 +34,12 @@ function App() {
 
   const onAddToCart = (obj) => {
     try {
-      if(cartItems.find(item => item.id === obj.id)) {
+      if(cartItems.find(item => Number(item.id) === Number(obj.id))) {
         fetch(`${url}/cart/${obj.id}`, {
           method: 'DELETE',
           })
           .then(response => response.json())
-        setCartItems(prev => prev.filter(item => item.id !== obj.id));
+        setCartItems(prev => prev.filter(item => Number(item.id) !== Number(obj.id)));
       } else {
         fetch(`${url}/cart`, {
           method: 'POST',
@@ -104,6 +104,7 @@ function App() {
         <Home 
           serchValue={serchValue} 
           items={items}
+          cartItems={cartItems}
           onChangeInput={onChangeInput}
           onAddToFavorite={onAddToFavorite}
           onAddToCart={onAddToCart} />
