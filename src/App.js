@@ -59,7 +59,7 @@ function App() {
     setSerchValue(event.target.value);
   };
 
-  const onAddToFavorite = (obj) => {
+  const onAddToFavorite = async (obj) => {
     if(favorites.find(object => object.id === obj.id)) {
       fetch(`${url}/favorites/${obj.id}`, {
         method: 'DELETE',
@@ -67,14 +67,14 @@ function App() {
         .then(response => response.json());
         setFavorites(prev => prev.filter(item => item.id !== obj.id));
     } else {
-      fetch(`${url}/favorites`, {
+      const {data} = await fetch(`${url}/favorites`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify(obj)
     });
-    setFavorites(prev => [...prev, obj]);
+    setFavorites(prev => [...prev, data]);
     }
   };
 

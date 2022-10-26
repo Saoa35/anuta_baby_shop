@@ -281,12 +281,17 @@ body {
     flex-direction: column;
   }
 
-  .cart{
-    max-width:300px;
+  .cart-overlay {
+    // max-height: fit-content;
 
-    .cartField {
-      max-width: fit-content;
-      max-height: fit-content;
+    .cart{
+      max-width:300px;
+      // max-height: inherit;
+  
+      .cartField {
+        max-width: fit-content;
+        max-height: fit-content;
+      }
     }
   }
   
