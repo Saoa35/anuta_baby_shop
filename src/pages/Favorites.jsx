@@ -17,11 +17,9 @@ function Favorites({ items }) {
                         title={item.title} 
                         img={item.img} 
                         price={item.price} 
-                //   onFavorite={obj => onAddToFavorite(obj)}
-                //   onPlus={obj => onAddToCart(obj)}
-                    />      
+                        isFavorite={true}/>      
                 )
-            )
+              )
             }
       </div>
     </div>

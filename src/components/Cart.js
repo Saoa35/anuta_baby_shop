@@ -14,7 +14,7 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
         </h2>
 
         {items.length > 0 ? ( 
-          <div>
+          <div className="cartField">
             <div className="items">
               {items.map((obj, index) => (
                 <div className="cartItem" key={index}>
