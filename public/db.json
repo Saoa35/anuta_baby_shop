@@ -1,20 +1,20 @@
 {
     "items": [
-        {"title":"Fighter Aircraft Hawker Tempest", "imgUrl":"/img/Goods/1.jpg", "price":200},
-        {"title":"Messerschmitt Bf.110 Night Fighter", "imgUrl":"/img/Goods/2.jpg", "price":300},
-        {"title":"Bomber Boeing B-29 Superfortress", "imgUrl":"/img/Goods/3.jpg", "price":650},
-        {"title":"Carrier-Вased Fighter Grumman F6F Hellcat", "imgUrl":"/img/Goods/4.jpg", "price":350},
-        {"title":"Attack Aircraft Ilyushin IL-2 M3", "imgUrl":"/img/Goods/5.jpg", "price":450},
-        {"title":"Fighter Aircraft Messershmitt Bf 109 G-2", "imgUrl":"/img/Goods/6.jpg", "price":330},
-        {"title":"I16 Type 18 Fighter Aircraft", "imgUrl":"/img/Goods/7.jpg", "price":300},
-        {"title":"Multirole Fighter-Bomber DH.98 Mosquito", "imgUrl":"/img/Goods/8.jpg", "price":480},
-        {"title":"High-Altitude Fighter MIG 3", "imgUrl":"/img/Goods/9.jpg", "price":380},
-        {"title":"Carrier-Вased Fighter F4U Corsair", "imgUrl":"/img/Goods/10.jpg", "price":460},
-        {"title":"Yak-9t Fighter Aircraft", "imgUrl":"/img/Goods/11.jpg", "price":430},
-        {"title":"Bomber Boeing B-17 Flying Fortress", "imgUrl":"/img/Goods/12.jpg", "price":600},
-        {"title":"Fighter Aircraft I-153 Chaika", "imgUrl":"/img/Goods/13.jpg", "price":370},
-        {"title":"Mitsubishi A6M Zero Fighter Aircraft", "imgUrl":"/img/Goods/14.jpg", "price":420},
-        {"title":"Fighter Aircraft P-51b Mustang", "imgUrl":"/img/Goods/15.jpg", "price":460},
-        {"title":"Heinkel He 162 Jet Fighter", "imgUrl":"/img/Goods/16.jpg", "price":400}
+        {"id": "1", "title":"Fighter Aircraft Hawker Tempest", "imgUrl":"/img/Goods/1.jpg", "price":200},
+        {"id": "2", "title":"Messerschmitt Bf.110 Night Fighter", "imgUrl":"/img/Goods/2.jpg", "price":300},
+        {"id": "3", "title":"Bomber Boeing B-29 Superfortress", "imgUrl":"/img/Goods/3.jpg", "price":650},
+        {"id": "4", "title":"Carrier-Вased Fighter Grumman F6F Hellcat", "imgUrl":"/img/Goods/4.jpg", "price":350},
+        {"id": "5", "title":"Attack Aircraft Ilyushin IL-2 M3", "imgUrl":"/img/Goods/5.jpg", "price":450},
+        {"id": "6", "title":"Fighter Aircraft Messershmitt Bf 109 G-2", "imgUrl":"/img/Goods/6.jpg", "price":330},
+        {"id": "7", "title":"I16 Type 18 Fighter Aircraft", "imgUrl":"/img/Goods/7.jpg", "price":300},
+        {"id": "8", "title":"Multirole Fighter-Bomber DH.98 Mosquito", "imgUrl":"/img/Goods/8.jpg", "price":480},
+        {"id": "9", "title":"High-Altitude Fighter MIG 3", "imgUrl":"/img/Goods/9.jpg", "price":380},
+        {"id": "10", "title":"Carrier-Вased Fighter F4U Corsair", "imgUrl":"/img/Goods/10.jpg", "price":460},
+        {"id": "11", "title":"Yak-9t Fighter Aircraft", "imgUrl":"/img/Goods/11.jpg", "price":430},
+        {"id": "12" ,"title":"Bomber Boeing B-17 Flying Fortress", "imgUrl":"/img/Goods/12.jpg", "price":600},
+        {"id": "13", "title":"Fighter Aircraft I-153 Chaika", "imgUrl":"/img/Goods/13.jpg", "price":370},
+        {"id": "14", "title":"Mitsubishi A6M Zero Fighter Aircraft", "imgUrl":"/img/Goods/14.jpg", "price":420},
+        {"id": "15", "title":"Fighter Aircraft P-51b Mustang", "imgUrl":"/img/Goods/15.jpg", "price":460},
+        {"id": "16", "title":"Heinkel He 162 Jet Fighter", "imgUrl":"/img/Goods/16.jpg", "price":400}
     ]
 }

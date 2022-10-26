@@ -282,7 +282,12 @@ body {
   }
 
   .cart{
-    max-width:fit-content;
+    max-width:300px;
+
+    .cartField {
+      max-width: fit-content;
+      max-height: fit-content;
+    }
   }
   
   .content-header {

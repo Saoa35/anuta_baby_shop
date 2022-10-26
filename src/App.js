@@ -87,7 +87,7 @@ function App() {
       </Route>
 
       <Route path="/favorites" exact>
-        <Favorites items={favorites} onAddToCart={onAddToCart} />
+        <Favorites items={favorites} onAddToFavorite={onAddToFavorite} />
       </Route>
       
     </div>
