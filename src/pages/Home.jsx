@@ -23,7 +23,7 @@ function Home({ cartItems, serchValue, items, onChangeInput, onAddToFavorite, on
               title={item.title} 
               img={item.imgUrl} 
               price={item.price} 
-              wasAdded={cartItems.some(obj => obj.id === item.id)}
+              wasAdded={cartItems.some(obj => Number(obj.id) === Number(item.id))}
               onFavorite={obj => onAddToFavorite(obj)}
               onPlus={obj => onAddToCart(obj)}
             />
