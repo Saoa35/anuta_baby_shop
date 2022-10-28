@@ -26,6 +26,7 @@ function Home({ cartItems, serchValue, items, onChangeInput, onAddToFavorite, on
               wasAdded={cartItems.some(obj => Number(obj.id) === Number(item.id))}
               onFavorite={obj => onAddToFavorite(obj)}
               onPlus={obj => onAddToCart(obj)}
+              isLoading
             />
           )
         }
