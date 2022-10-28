@@ -39,7 +39,7 @@ function App() {
         await axios.delete(`${url}/cart/${obj.id}`);
         setCartItems(prev => prev.filter(item => Number(item.id) !== Number(obj.id)));
       } else {
-      await axios.post(`${url}/cart`);
+      await axios.post(`${url}/cart`, obj);
       setCartItems(prev => [...prev, obj]);
     // setCartItems([...cartItems, obj]);
 
