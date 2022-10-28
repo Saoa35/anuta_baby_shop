@@ -36,24 +36,13 @@ function App() {
   const onAddToCart = async (obj) => {
     try {
       if(cartItems.find(item => Number(item.id) === Number(obj.id))) {
-        // fetch(`${url}/cart/${obj.id}`, {
-        //   method: 'DELETE',
-        //   })
-        //   .then(response => response.json())
-        setCartItems(prev => prev.filter(item => Number(item.id) !== Number(obj.id)));
         await axios.delete(`${url}/cart/${obj.id}`);
+        setCartItems(prev => prev.filter(item => Number(item.id) !== Number(obj.id)));
       } else {
-      //   fetch(`${url}/cart`, {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json;charset=utf-8'
-      //     },
-      //     body: JSON.stringify(obj)
-      // });
+      await axios.post(`${url}/cart`);
       setCartItems(prev => [...prev, obj]);
     // setCartItems([...cartItems, obj]);
 
-      await axios.post(`${url}/cart`);
       }
     } catch (error) {
       console.error(error);
@@ -62,13 +51,7 @@ function App() {
 
 
   const onRemoveFromCart = (id) => {
-    // fetch(`${url}/cart/${id}`, {
-    //   method: 'DELETE',
-    //   })
-    //   .then(response => response.json())
-
     axios.delete(`${url}/cart/${id}`);
-
     setCartItems(prev => prev.filter(item => item.id !== id));
   };
 
@@ -79,21 +62,10 @@ function App() {
   const onAddToFavorite = async (obj) => {
     try {
       if(favorites.find(object => object.id === obj.id)) {
-        // fetch(`${url}/favorites/${obj.id}`, {
-        //   method: 'DELETE',
-        //   })
-        //   .then(response => response.json());
         axios.delete(`${url}/favorites/${obj.id}`);
           setFavorites(prev => prev.filter(item => item.id !== obj.id));
       } else {
         const { data } = await axios.post(`${url}/favorites`, obj);
-      //   const {data} = await fetch(`${url}/favorites`, {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json;charset=utf-8'
-      //     },
-      //     body: JSON.stringify(obj)
-      // });
       setFavorites(prev => [...prev, data]);
       }
     } catch (error) {
