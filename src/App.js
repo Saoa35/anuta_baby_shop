@@ -16,20 +16,15 @@ function App() {
   const [favorites, setFavorites] =useState([]);
 
   useEffect(() => {
-    fetch(`${url}/items`)
-      .then(res => res.json())
-      .then(data => setItems(data))
-      .catch(error => console.log(error.mesage));
+    async function fetchData () {
+      const cartResponse = await fetch(`${url}/cart`);
+      const favoritesResponse = await fetch(`${url}/favorites`);
+      const itemsResponse = fetch(`${url}/items`);
 
-    fetch(`${url}/cart`)
-      .then(res => res.json())
-      .then(data => setCartItems(data))
-      .catch(error => console.log(error.mesage));
-
-    fetch(`${url}/favorites`)
-    .then(res => res.json())
-    .then(data => setFavorites(data))
-    .catch(error => console.log(error.mesage));
+      setCartItems(cartResponse.data);
+      setFavorites(favoritesResponse.data);
+      setItems(itemsResponse.data);
+    }
   },[]);
 
   const onAddToCart = (obj) => {
