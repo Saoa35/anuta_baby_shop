@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
+import axios from "axios";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
 import Favorites from "./pages/Favorites";
@@ -16,15 +17,35 @@ function App() {
   const [favorites, setFavorites] =useState([]);
 
   useEffect(() => {
-    async function fetchData () {
-      const cartResponse = await fetch(`${url}/cart`);
-      const favoritesResponse = await fetch(`${url}/favorites`);
-      const itemsResponse = fetch(`${url}/items`);
 
-      setCartItems(cartResponse.data);
-      setFavorites(favoritesResponse.data);
-      setItems(itemsResponse.data);
+    async function fetchData () {
+
+      const cartResponse = await axios.get(`${url}/cart`);
+      const favoritesResponse = await get(`${url}/favorites`);
+      const itemsResponse = await
+      
+      // const cartResponse = await fetch(`${url}/cart`)
+      // .then(res => res.json())
+      // .then(data => setCartItems(data))
+      // .catch(error => console.log(error.mesage));
+
+      // const favoritesResponse = await fetch(`${url}/favorites`)
+      // .then(res => res.json())
+      // .then(data => setFavorites(data))
+      // .catch(error => console.log(error.mesage));
+
+      const itemsResponse = await fetch(`${url}/items`)
+      .then(res => res.json())
+      .then(data => setItems(data))
+      .catch(error => console.log(error.mesage));
+  
+        setCartItems(cartResponse.data);
+        setFavorites(favoritesResponse.data);
+        setItems(itemsResponse.data);
     }
+    
+    fetchData ();
+
   },[]);
 
   const onAddToCart = (obj) => {
