@@ -21,23 +21,8 @@ function App() {
     async function fetchData () {
 
       const cartResponse = await axios.get(`${url}/cart`);
-      const favoritesResponse = await get(`${url}/favorites`);
-      const itemsResponse = await
-      
-      // const cartResponse = await fetch(`${url}/cart`)
-      // .then(res => res.json())
-      // .then(data => setCartItems(data))
-      // .catch(error => console.log(error.mesage));
-
-      // const favoritesResponse = await fetch(`${url}/favorites`)
-      // .then(res => res.json())
-      // .then(data => setFavorites(data))
-      // .catch(error => console.log(error.mesage));
-
-      const itemsResponse = await fetch(`${url}/items`)
-      .then(res => res.json())
-      .then(data => setItems(data))
-      .catch(error => console.log(error.mesage));
+      const favoritesResponse = await axios.get(`${url}/favorites`);
+      const itemsResponse = await axios.get(`${url}/items`);
   
         setCartItems(cartResponse.data);
         setFavorites(favoritesResponse.data);
@@ -48,36 +33,41 @@ function App() {
 
   },[]);
 
-  const onAddToCart = (obj) => {
+  const onAddToCart = async (obj) => {
     try {
       if(cartItems.find(item => Number(item.id) === Number(obj.id))) {
-        fetch(`${url}/cart/${obj.id}`, {
-          method: 'DELETE',
-          })
-          .then(response => response.json())
+        // fetch(`${url}/cart/${obj.id}`, {
+        //   method: 'DELETE',
+        //   })
+        //   .then(response => response.json())
         setCartItems(prev => prev.filter(item => Number(item.id) !== Number(obj.id)));
+        await axios.delete(`${url}/cart/${obj.id}`);
       } else {
-        fetch(`${url}/cart`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-          },
-          body: JSON.stringify(obj)
-      });
+      //   fetch(`${url}/cart`, {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json;charset=utf-8'
+      //     },
+      //     body: JSON.stringify(obj)
+      // });
       setCartItems(prev => [...prev, obj]);
     // setCartItems([...cartItems, obj]);
+
+      await axios.post(`${url}/cart`);
       }
     } catch (error) {
-      console.log();
+      console.error(error);
     }
   };
 
 
   const onRemoveFromCart = (id) => {
-    fetch(`${url}/cart/${id}`, {
-      method: 'DELETE',
-      })
-      .then(response => response.json())
+    // fetch(`${url}/cart/${id}`, {
+    //   method: 'DELETE',
+    //   })
+    //   .then(response => response.json())
+
+    axios.delete(`${url}/cart/${id}`);
 
     setCartItems(prev => prev.filter(item => item.id !== id));
   };
@@ -89,19 +79,21 @@ function App() {
   const onAddToFavorite = async (obj) => {
     try {
       if(favorites.find(object => object.id === obj.id)) {
-        fetch(`${url}/favorites/${obj.id}`, {
-          method: 'DELETE',
-          })
-          .then(response => response.json());
+        // fetch(`${url}/favorites/${obj.id}`, {
+        //   method: 'DELETE',
+        //   })
+        //   .then(response => response.json());
+        axios.delete(`${url}/favorites/${obj.id}`);
           setFavorites(prev => prev.filter(item => item.id !== obj.id));
       } else {
-        const {data} = await fetch(`${url}/favorites`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-          },
-          body: JSON.stringify(obj)
-      });
+        const { data } = await axios.post(`${url}/favorites`, obj);
+      //   const {data} = await fetch(`${url}/favorites`, {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json;charset=utf-8'
+      //     },
+      //     body: JSON.stringify(obj)
+      // });
       setFavorites(prev => [...prev, data]);
       }
     } catch (error) {
