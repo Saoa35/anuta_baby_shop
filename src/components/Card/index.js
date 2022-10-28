@@ -23,8 +23,8 @@ export function Card({ id, title, img, price, onPlus, onFavorite, isFavorite = f
           <ContentLoader 
               speed={0}
               width={210}
-              height={295}
-              viewBox="0 0 210 295"
+              height={285}
+              viewBox="0 0 210 285"
               backgroundColor="#f3f3f3"
               foregroundColor="#ecebeb">
               <rect x="0" y="0" rx="10" ry="10" width="170" height="140" /> 
