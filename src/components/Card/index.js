@@ -2,18 +2,27 @@ import { useState } from 'react';
 import styles from './Card.module.scss';
 import ContentLoader from 'react-content-loader';
 
-export function Card({ id, title, img, price, onPlus, onFavorite, isFavorite = false, wasAdded = false, isLoading = false }) {
+export function 
+          Card({ id, 
+                 title, 
+                 imgUrl, 
+                 price, 
+                 onPlus, 
+                 onFavorite, 
+                 isFavorite = false, 
+                 wasAdded = false, 
+                 isLoading = false }) {
 
   const [isAdded, setIsAdded] = useState(wasAdded);
   const [isLiked, setIsLiked] = useState(isFavorite);
 
   const onClickPlus = () => {
-    onPlus({id, title, img, price})
+    onPlus({id, title, imgUrl, price})
     setIsAdded(!isAdded);
   };
 
   const onClickFavorite = () => {
-    onFavorite({id, title, img, price})
+    onFavorite({id, title, imgUrl, price})
     setIsLiked(!isLiked);
   }
 
@@ -41,7 +50,7 @@ export function Card({ id, title, img, price, onPlus, onFavorite, isFavorite = f
               alt='Heart' 
               title={!isLiked ? "Set as Favorite" : 'Delete from Favorite'}/>
           </div>
-          <img width={170} height={140} style={{borderRadius:'10px'}}  src={img} alt="Goods"/>
+          <img width={170} height={140} style={{borderRadius:'10px'}}  src={imgUrl} alt="Goods"/>
           <h5>{title}</h5>
           <div className={styles.cardBottom}>
             <div className={styles.cardPrice}>

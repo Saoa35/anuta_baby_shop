@@ -1,24 +1,30 @@
 import  { Card }  from "../components/Card";
 
-function Home({ cartItems, serchValue, items, onChangeInput, onAddToFavorite, onAddToCart }) {
+function Home({ cartItems, serchValue, items, onChangeInput, onAddToFavorite, onAddToCart, loading }) {
 
   const renderItems = () => {
-    return items
-        .filter(item => item.title.toUpperCase().includes(serchValue.toUpperCase()))
-        .map((item, index) => (
-          <Card 
+
+    const filteredItems = items.filter(item => item.title.toUpperCase().includes(serchValue.toUpperCase()));
+    
+    return (loading ? [...Array(16)] : filteredItems).map((item, index) => (
+      <Card 
             key={index} 
-            id={item.id}
-            title={item.title} 
-            img={item.imgUrl} 
-            price={item.price} 
+            // id={item.id}
+            // title={item.title} 
+            // img={item.imgUrl} 
+            // price={item.price} 
             wasAdded={cartItems.some(obj => Number(obj.id) === Number(item.id))}
             onFavorite={obj => onAddToFavorite(obj)}
             onPlus={obj => onAddToCart(obj)}
-            isLoading={false}
-          />
-        )); 
-  }
+            isLoading={loading}
+            {...item}
+      />
+    ));       
+  };
+       
+       
+    
+          
 
   return(
     <div className="content">

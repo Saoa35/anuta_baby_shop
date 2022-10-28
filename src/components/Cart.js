@@ -18,7 +18,7 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
             <div className="items">
               {items.map((obj, index) => (
                 <div className="cartItem" key={index}>
-                  <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src={obj.img} alt="Goods"/>
+                  <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src={obj.imgUrl} alt="Goods"/>
                   <div style={{marginRight:'15px'}}>
                     <p>{obj.title}</p>
                     <b>{obj.price} uah</b>
