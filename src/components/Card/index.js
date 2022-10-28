@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './Card.module.scss';
+import ContentLoader from 'react-content-loader';
 
 export function Card({ id, title, img, price, onPlus, onFavorite, isFavorite = false, wasAdded = false }) {
 
