@@ -15,6 +15,7 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [serchValue, setSerchValue] = useState('');
   const [favorites, setFavorites] =useState([]);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
 
@@ -87,7 +88,9 @@ function App() {
           cartItems={cartItems}
           onChangeInput={onChangeInput}
           onAddToFavorite={onAddToFavorite}
-          onAddToCart={onAddToCart} />
+          onAddToCart={onAddToCart}
+          // loading={!items.length} 
+        />
       </Route>
 
       <Route path="/favorites" exact>
