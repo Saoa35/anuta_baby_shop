@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
-import { AppContext } from "../App";
 import { Card } from "../components/Card";
+import AppContext from "../context";
 
 
 function Favorites({ onAddToFavorite, onAddToCart }) {
@@ -17,7 +17,7 @@ function Favorites({ onAddToFavorite, onAddToCart }) {
       
       <div className='goods'>
 
-        {items.map((item, index) => (
+        {[].map((item, index) => (
                     <Card 
                       key={index} 
                       isFavorite={true}
