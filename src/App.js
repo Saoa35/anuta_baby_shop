@@ -6,9 +6,11 @@ import Header from "./components/Header";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 
-const url = 'https://63540251e64783fa827d56c7.mockapi.io';
+
 
 function App() {
+
+  const url = 'https://63540251e64783fa827d56c7.mockapi.io';
 
   const [cartOpened, setCartOpened] = useState(false);
   const [items, setItems] = useState([]);
