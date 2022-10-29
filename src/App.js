@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import axios from "axios";
 import Cart from "./components/Cart";
@@ -6,6 +6,8 @@ import Header from "./components/Header";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 
+
+const AppContext = createContext({});
 
 
 function App() {
