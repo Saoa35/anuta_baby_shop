@@ -52,7 +52,7 @@ function App() {
 
   const onRemoveFromCart = (id) => {
     axios.delete(`${url}/cart/${id}`);
-    setCartItems(prev => prev.filter(item => item.id !== id));
+    setCartItems(prev => prev.filter(item => Number(item.id) !== Number(id)));
   };
 
   const onChangeInput = (event) => {
