@@ -78,29 +78,30 @@ function App() {
   };
 
   return (
-    <div className="wrapper">
+    <AppContext.Provider>
+     <div className="wrapper">
 
-      {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} />}
-      
-      <Header onClickCart={() => setCartOpened(true)} />
-        
-      <Route path="/" exact>
-        <Home 
-          serchValue={serchValue} 
-          items={items}
-          cartItems={cartItems}
-          onChangeInput={onChangeInput}
-          onAddToFavorite={onAddToFavorite}
-          onAddToCart={onAddToCart}
-          loading={loading} 
-        />
-      </Route>
+        {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} />}
 
-      <Route path="/favorites" exact>
-        <Favorites items={favorites} onAddToFavorite={onAddToFavorite} />
-      </Route>
-      
-    </div>
+        <Header onClickCart={() => setCartOpened(true)} />
+          
+        <Route path="/" exact>
+          <Home 
+            serchValue={serchValue} 
+            items={items}
+            cartItems={cartItems}
+            onChangeInput={onChangeInput}
+            onAddToFavorite={onAddToFavorite}
+            onAddToCart={onAddToCart}
+            loading={loading} />
+        </Route>
+
+        <Route path="/favorites" exact>
+          <Favorites items={favorites} onAddToFavorite={onAddToFavorite} />
+        </Route>
+
+      </div>
+    </AppContext.Provider>
   );
 }
 
