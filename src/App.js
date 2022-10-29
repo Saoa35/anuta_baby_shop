@@ -7,7 +7,7 @@ import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 
 
-const AppContext = createContext({});
+export const AppContext = createContext({});
 
 
 function App() {
@@ -97,7 +97,7 @@ function App() {
         </Route>
 
         <Route path="/favorites" exact>
-          <Favorites items={favorites} onAddToFavorite={onAddToFavorite} />
+          <Favorites onAddToFavorite={onAddToFavorite} />
         </Route>
 
       </div>

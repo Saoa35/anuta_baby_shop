@@ -1,7 +1,12 @@
+import React from "react";
+import { useContext } from "react";
+import { AppContext } from "../App";
 import { Card } from "../components/Card";
 
 
-function Favorites({ items, onAddToFavorite, onAddToCart }) {
+function Favorites({ onAddToFavorite, onAddToCart }) {
+
+  const state = useContext(AppContext);
 
   return(
     <div className="content">
