@@ -6,7 +6,7 @@ import AppContext from "../context";
 
 function Favorites({ onAddToFavorite, onAddToCart }) {
 
-  const state = useContext(AppContext);
+  const { favorites } = useContext(AppContext);
 
   return(
     <div className="content">
@@ -17,7 +17,7 @@ function Favorites({ onAddToFavorite, onAddToCart }) {
       
       <div className='goods'>
 
-        {[].map((item, index) => (
+        {favorites.map((item, index) => (
                     <Card 
                       key={index} 
                       isFavorite={true}

@@ -3,15 +3,16 @@ import styles from './Card.module.scss';
 import ContentLoader from 'react-content-loader';
 
 export function 
-          Card({ id, 
-                 title, 
-                 imgUrl, 
-                 price, 
-                 onPlus, 
-                 onFavorite, 
-                 isFavorite = false, 
-                 wasAdded = false, 
-                 isLoading = false }) {
+        Card({ 
+          id, 
+          title, 
+          imgUrl, 
+          price, 
+          onPlus, 
+          onFavorite, 
+          isFavorite = false, 
+          wasAdded = false, 
+          isLoading = false }) {
 
   const [isAdded, setIsAdded] = useState(wasAdded);
   const [isLiked, setIsLiked] = useState(isFavorite);
