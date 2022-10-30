@@ -15,6 +15,7 @@ export function
           isLoading = false }) {
 
   const [isLiked, setIsLiked] = useState(isFavorite);
+  
   const { isItemAdded } = useContext(AppContext);
 
   const onClickPlus = () => {
