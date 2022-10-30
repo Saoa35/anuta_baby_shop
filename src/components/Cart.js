@@ -9,17 +9,20 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
 
   const [isOrderComplete, setIsOrderComplete] = useState(false);
   const [orderId, setOrderId] = useState(null);
-  const [isLoading, setIsLoading] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const onClickOrder = async () => {
     try {
-      const {data} = await axios.post('https://63540251e64783fa827d56c7.mockapi.io/orders', cartItems);
-      setOrderId(data.id)
+      setIsLoading(true)
+      const {data} = await axios.post('https://63540251e64783fa827d56c7.mockapi.io/orders', {items: cartItems});
+      await axios.put("https://63540251e64783fa827d56c7.mockapi.io/cart", []);
+      setOrderId(data.id);
       setIsOrderComplete(true);
       setCartItems([]);
     } catch (error) {
       console.log(error.mesage);
     }
+    setIsLoading(false);
   }
 
   return(
@@ -61,7 +64,7 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
                   <b>550 uah</b>
                 </li>
               </ul>
-              <button onClick={onClickOrder} className="greenButton">Place an order <img src="/img/arrow.svg" alt="Arrow"/></button>
+              <button disabled={isLoading} onClick={onClickOrder} className="greenButton">Place an order <img src="/img/arrow.svg" alt="Arrow"/></button>
             </div>
           </div>
         ) : (<Info title={isOrderComplete ? "Order is completed" : "Cart is empty"} 
