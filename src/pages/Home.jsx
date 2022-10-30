@@ -9,11 +9,7 @@ function Home({ cartItems, serchValue, items, onChangeInput, onAddToFavorite, on
     return (loading ? [...Array(16)] : filteredItems).map((item, index) => (
       <Card 
             key={index} 
-            // id={item.id}
-            // title={item.title} 
-            // img={item.imgUrl} 
-            // price={item.price} 
-            wasAdded={cartItems.some(obj => Number(obj.id) === Number(item.id))}
+            wasAdded={isItemAdded(item.id)}
             onFavorite={obj => onAddToFavorite(obj)}
             onPlus={obj => onAddToCart(obj)}
             isLoading={loading}
