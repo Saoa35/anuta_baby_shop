@@ -1,5 +1,17 @@
+import { useContext, useState } from "react";
+import AppContext from "../context";
+import Info from "./Info";
 
 function Cart({ onCloseCart, onRemove, items = [] }) {
+
+  const { setCartItems } = useContext(AppContext);
+
+  const [isOrderComplete, setIsOrderComplete] = useState(false);
+
+  const onClickOrder = () => {
+    setIsOrderComplete(true);
+    setCartItems([]);
+  }
 
   return(
     <div className="cart-overlay">
@@ -40,21 +52,13 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
                   <b>550 uah</b>
                 </li>
               </ul>
-              <button className="greenButton">Place an order <img src="/img/arrow.svg" alt="Arrow"/></button>
+              <button onClick={onClickOrder} className="greenButton">Place an order <img src="/img/arrow.svg" alt="Arrow"/></button>
             </div>
           </div>
-              ) : (
-          <div className="cartEmpty">
-            <img width={240} height={180} style={{marginBottom:'20px'}} src="/img/empty-cart.png" alt="Empty Cart" />
-            <h2>Cart is empty</h2>
-            <p>Add at least one item, to place an order</p>
-            <button onClick={onCloseCart} className="greenButton">
-              <img src="/img/arrow.svg" alt="Arrow" />
-              Go Back
-            </button>
-          </div>)  
-        }
-
+        ) : (<Info title={isOrderComplete ? "Order is completed" : "Cart is empty"} 
+                   description={isOrderComplete ? "Your order has been sent for processing, our operators will contact you shortly" 
+                                                : "Add at least one item, to place an order"} 
+                   image={isOrderComplete ? "/img/complete-order.jpg" : "/img/empty-cart.png"}/>)}
       </div>
     </div>
   )
