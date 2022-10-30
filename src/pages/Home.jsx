@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import  { Card }  from "../components/Card";
+import AppContext from "../context";
 
 function Home({ cartItems, serchValue, items, onChangeInput, onAddToFavorite, onAddToCart, loading }) {
+
+  const { isItemAdded } = useContext(AppContext);
 
   const renderItems = () => {
 
