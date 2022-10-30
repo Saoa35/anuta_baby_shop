@@ -1,10 +1,6 @@
-import { useContext } from "react";
 import  { Card }  from "../components/Card";
-import AppContext from "../context";
 
-function Home({ cartItems, serchValue, items, onChangeInput, onAddToFavorite, onAddToCart, loading }) {
-
-  const { isItemAdded } = useContext(AppContext);
+function Home({ serchValue, items, onChangeInput, onAddToFavorite, onAddToCart, loading }) {
 
   const renderItems = () => {
 
@@ -13,7 +9,7 @@ function Home({ cartItems, serchValue, items, onChangeInput, onAddToFavorite, on
     return (loading ? [...Array(16)] : filteredItems).map((item, index) => (
       <Card 
             key={index} 
-            wasAdded={isItemAdded(item.id)}
+            // wasAdded={isItemAdded(item && item.id)}
             onFavorite={obj => onAddToFavorite(obj)}
             onPlus={obj => onAddToCart(obj)}
             isLoading={loading}
@@ -22,10 +18,6 @@ function Home({ cartItems, serchValue, items, onChangeInput, onAddToFavorite, on
     ));       
   };
        
-       
-    
-          
-
   return(
     <div className="content">
       <div className="content-header">
