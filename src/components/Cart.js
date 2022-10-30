@@ -1,14 +1,17 @@
 import { useContext, useState } from "react";
 import AppContext from "../context";
 import Info from "./Info";
+import axios from "axios";
 
 function Cart({ onCloseCart, onRemove, items = [] }) {
 
-  const { setCartItems } = useContext(AppContext);
+  const { cartItems, setCartItems } = useContext(AppContext);
 
   const [isOrderComplete, setIsOrderComplete] = useState(false);
+  const [orderId, setOrderId] = useState(null);
 
   const onClickOrder = () => {
+    axios.post('https://63540251e64783fa827d56c7.mockapi.io/orders', cartItems);
     setIsOrderComplete(true);
     setCartItems([]);
   }
@@ -56,7 +59,7 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
             </div>
           </div>
         ) : (<Info title={isOrderComplete ? "Order is completed" : "Cart is empty"} 
-                   description={isOrderComplete ? "Your order has been sent for processing, our operators will contact you shortly" 
+                   description={isOrderComplete ? "Your order #18 has been sent for processing, our operators will contact you shortly" 
                                                 : "Add at least one item, to place an order"} 
                    image={isOrderComplete ? "/img/complete-order.jpg" : "/img/empty-cart.png"}/>)}
       </div>

@@ -8,7 +8,7 @@ const Info = ({ title, image, description }) => {
 
   return(
     <div className="cartEmpty">
-      <img width={240} height={180} style={{marginBottom:'20px'}} src={image} alt="Empty Cart" />
+      <img width={240} style={{marginBottom:'20px'}} src={image} alt="Empty Cart" />
       <h2>{title}</h2>
       <p>{description}</p>
       <button onClick={() => setCartOpened(false)} className="greenButton">
