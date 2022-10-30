@@ -18,7 +18,7 @@ body {
     max-width: 1080px;
     margin: 20px auto;
     position: relative;
-    min-height: fit-content;
+    // min-height: fit-content;
   
     .cart-overlay {
       position: absolute;
@@ -38,7 +38,7 @@ body {
         border-top-right-radius: 20px;
         border-bottom-left-radius: 20px;
         width: 385px;
-        min-height: fit-content;
+        // min-height: fit-content;
         right: 0;
         background: #ffffff;
         box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
@@ -49,6 +49,7 @@ body {
           overflow: hidden;
           width: 385px;
           padding: 30px;
+          flex: 1;
         }
   
         h2 {
@@ -92,7 +93,7 @@ body {
         }
   
         .items {
-          flex: 1;
+          // flex: 1;
           overflow: auto;
           margin-bottom: 40px;
         }

@@ -65,7 +65,7 @@ function App() {
     try {
       if(favorites.find(object => Number(object.id) === Number(obj.id))) {
         axios.delete(`${url}/favorites/${obj.id}`);
-          setFavorites(prev => prev.filter(item => item.id !== obj.id));
+          setFavorites(prev => prev.filter(item => Number(item.id) !== Number(obj.id)));
       } else {
         const { data } = await axios.post(`${url}/favorites`, obj);
       setFavorites(prev => [...prev, data]);
