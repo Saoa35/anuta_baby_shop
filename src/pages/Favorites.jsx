@@ -4,9 +4,9 @@ import { Card } from "../components/Card";
 import AppContext from "../context";
 
 
-function Favorites({ onAddToFavorite, onAddToCart }) {
+function Favorites() {
 
-  const { favorites } = useContext(AppContext);
+  const { favorites, onAddToFavorite } = useContext(AppContext);
 
   return(
     <div className="content">

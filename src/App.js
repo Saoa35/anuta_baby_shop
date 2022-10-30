@@ -63,7 +63,7 @@ function App() {
 
   const onAddToFavorite = async (obj) => {
     try {
-      if(favorites.find(object => object.id === obj.id)) {
+      if(favorites.find(object => Number(object.id) === Number(obj.id))) {
         axios.delete(`${url}/favorites/${obj.id}`);
           setFavorites(prev => prev.filter(item => item.id !== obj.id));
       } else {
@@ -80,7 +80,7 @@ function App() {
   }
 
   return (
-    <AppContext.Provider value={{ items, cartItems, favorites, isItemAdded }}>
+    <AppContext.Provider value={{ items, cartItems, favorites, isItemAdded, onAddToFavorite }}>
      <div className="wrapper">
 
         {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} />}
@@ -99,7 +99,7 @@ function App() {
         </Route>
 
         <Route path="/favorites" exact>
-          <Favorites onAddToFavorite={onAddToFavorite} />
+          <Favorites />
         </Route>
 
       </div>

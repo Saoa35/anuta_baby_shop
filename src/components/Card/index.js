@@ -12,7 +12,6 @@ export function
           onPlus, 
           onFavorite, 
           isFavorite = false, 
-          wasAdded = false, 
           isLoading = false }) {
 
   const [isLiked, setIsLiked] = useState(isFavorite);
@@ -60,9 +59,9 @@ export function
             </div>
             <img className={styles.plus} 
                 onClick={onClickPlus} 
-                src={false ? '/img/btn-checked.svg' : '/img/btn-plus.svg'} 
+                src={isItemAdded(id) ? '/img/btn-checked.svg' : '/img/btn-plus.svg'} 
                 alt='Plus' 
-                title={!false ? "Add to Cart" : 'Delete from Cart'}/>
+                title={!isItemAdded(id) ? "Add to Cart" : 'Delete from Cart'}/>
           </div>
         </>
       )}
