@@ -86,8 +86,8 @@ function App() {
         {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} />}
 
         <Header onClickCart={() => setCartOpened(true)} />
-          
-        <Route path="/" exact>
+
+         <Route path="/" exact>
           <Home 
             serchValue={serchValue} 
             items={items}
@@ -96,8 +96,8 @@ function App() {
             onAddToFavorite={onAddToFavorite}
             onAddToCart={onAddToCart}
             loading={loading} />
-        </Route>
-
+        </Route> 
+        
         <Route path="/favorites" exact>
           <Favorites />
         </Route>

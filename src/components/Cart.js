@@ -3,6 +3,8 @@ import AppContext from "../context";
 import Info from "./Info";
 import axios from "axios";
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 function Cart({ onCloseCart, onRemove, items = [] }) {
 
   const { cartItems, setCartItems } = useContext(AppContext);
@@ -15,10 +17,16 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
     try {
       setIsLoading(true)
       const {data} = await axios.post('https://63540251e64783fa827d56c7.mockapi.io/orders', {items: cartItems});
-      await axios.put("https://63540251e64783fa827d56c7.mockapi.io/cart", []);
       setOrderId(data.id);
       setIsOrderComplete(true);
       setCartItems([]);
+      
+        for (let i = 0; i < cartItems.length; i++) {
+          const item = cartItems[i];
+          await axios.delete("https://63540251e64783fa827d56c7.mockapi.io/cart/" + item.id);
+          await delay(1000);
+        }
+
     } catch (error) {
       console.log(error.mesage);
     }
