@@ -8,6 +8,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 function Cart({ onCloseCart, onRemove, items = [] }) {
 
   const { cartItems, setCartItems } = useContext(AppContext);
+  const totalPrice = cartItems.reduce((prev, obj) => obj.price + prev, 0 );
 
   const [isOrderComplete, setIsOrderComplete] = useState(false);
   const [orderId, setOrderId] = useState(null);
@@ -69,7 +70,7 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
                 <li>
                   <span>Total price:</span>
                   <div></div>
-                  <b>550 uah</b>
+                  <b>{totalPrice} uah</b>
                 </li>
               </ul>
               <button disabled={isLoading} onClick={onClickOrder} className="greenButton">Place an order <img src="/img/arrow.svg" alt="Arrow"/></button>
