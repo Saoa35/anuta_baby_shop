@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 import AppContext from "./context";
+import Orders from "./pages/Orders";
 
 
 function App() {
@@ -100,6 +101,10 @@ function App() {
         
         <Route path="/favorites" exact>
           <Favorites />
+        </Route>
+
+        <Route path="/orders" exact>
+          <Orders />
         </Route>
 
       </div>
