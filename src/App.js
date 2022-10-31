@@ -90,9 +90,10 @@ function App() {
         onAddToCart,
         setCartOpened, 
         setCartItems }}>
+          
      <div className="wrapper">
 
-        {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} />}
+        {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} opened={cartOpened} />}
 
         <Header onClickCart={() => setCartOpened(true)} />
 

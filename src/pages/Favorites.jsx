@@ -6,7 +6,7 @@ import AppContext from "../context";
 
 function Favorites() {
 
-  const { favorites, onAddToFavorite } = useContext(AppContext);
+  const { favorites, onAddToFavorite, onAddToCart } = useContext(AppContext);
 
   return(
     <div className="content">
@@ -22,7 +22,7 @@ function Favorites() {
                       key={index} 
                       isFavorite={true}
                       onFavorite={obj => onAddToFavorite(obj)}
-                      // onPlus={obj => onAddToCart(obj)}
+                      onPlus={obj => onAddToCart(obj)}
                       {...item}
                     />      
                 )

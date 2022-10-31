@@ -46,11 +46,11 @@ export function
           </ContentLoader>
         ) : (
         <>
-          <div className={styles.favorite} onClick={onClickFavorite}>
+          {onFavorite && <div className={styles.favorite} onClick={onClickFavorite}>
           <img src={isLiked ? '/img/liked.svg' : '/img/unliked.svg'} 
               alt='Heart' 
               title={!isLiked ? "Set as Favorite" : 'Delete from Favorite'}/>
-          </div>
+          </div>}
           <img width={170} height={140} style={{borderRadius:'10px'}}  src={imgUrl} alt="Goods"/>
           <h5>{title}</h5>
           <div className={styles.cardBottom}>
