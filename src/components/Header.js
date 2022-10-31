@@ -1,8 +1,12 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import AppContext from "../context";
 
 
 function Header(props) {
+
+  const {} = useContext(AppContext)
     
     return(
         <header>
