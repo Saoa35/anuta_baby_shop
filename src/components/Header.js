@@ -27,7 +27,7 @@ function Header(props) {
         <ul className="headerRight">
           <li>
             <img onClick={props.onClickCart} src="/img/cart.svg" width={25} height={25} alt='cart' title="Open Cart"/>
-            <span style={{margin:'0 20px'}}>1250 UAH</span>
+            <span style={{margin:'0 20px'}}>{totalPrice} UAH</span>
           </li>
           <li>
            <Link to="favorites">

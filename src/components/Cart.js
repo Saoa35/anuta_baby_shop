@@ -31,7 +31,7 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
       console.log(error.mesage);
     }
     setIsLoading(false);
-  }
+  };
 
   return(
     <div className="cart-overlay">
@@ -64,7 +64,7 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
                 <li>
                   <span>Total items:</span>
                   <div></div>
-                  <b>2 items</b>
+                  <b>{cartItems.length} items</b>
                 </li>
                 <li>
                   <span>Total price:</span>
