@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Info from "./Info";
 import axios from "axios";
 import { useCart } from "../hooks/useCart";
@@ -7,7 +7,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function Cart({ onCloseCart, onRemove, items = [] }) {
 
-  const {} = useCart()
+  const { cartItems, setCartItems, totalPrice } = useCart();
   const [isOrderComplete, setIsOrderComplete] = useState(false);
   const [orderId, setOrderId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
