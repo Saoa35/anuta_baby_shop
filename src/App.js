@@ -91,32 +91,32 @@ function App() {
         setCartOpened, 
         setCartItems }}>
           
-     <div className="wrapper">
+    <div className="wrapper">
 
-        {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} opened={cartOpened} />}
+      {cartOpened && <Cart onCloseCart={() => setCartOpened(false)} items={cartItems} onRemove={onRemoveFromCart} opened={cartOpened} />}
 
-        <Header onClickCart={() => setCartOpened(true)} />
+      <Header onClickCart={() => setCartOpened(true)} />
 
-         <Route path="/" exact>
-          <Home 
-            serchValue={serchValue} 
-            items={items}
-            cartItems={cartItems}
-            onChangeInput={onChangeInput}
-            onAddToFavorite={onAddToFavorite}
-            onAddToCart={onAddToCart}
-            loading={loading} />
-        </Route> 
-        
-        <Route path="/favorites" exact>
-          <Favorites />
-        </Route>
+        <Route path="/" exact>
+        <Home 
+          serchValue={serchValue} 
+          items={items}
+          cartItems={cartItems}
+          onChangeInput={onChangeInput}
+          onAddToFavorite={onAddToFavorite}
+          onAddToCart={onAddToCart}
+          loading={loading} />
+      </Route> 
+      
+      <Route path="/favorites" exact>
+        <Favorites />
+      </Route>
 
-        <Route path="/orders" exact>
-          <Orders />
-        </Route>
+      <Route path="/orders" exact>
+        <Orders />
+      </Route>
 
-      </div>
+    </div>
     </AppContext.Provider>
   );
 }
