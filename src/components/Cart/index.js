@@ -1,11 +1,12 @@
 import { useState } from "react";
-import Info from "./Info";
+import Info from "../Info";
 import axios from "axios";
-import { useCart } from "../hooks/useCart";
+import { useCart } from "../../hooks/useCart";
+import styles from "./Cart.module.scss";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-function Cart({ onCloseCart, onRemove, items = [] }) {
+function Cart({ onCloseCart, onRemove, items = [], opened }) {
 
   const { cartItems, setCartItems, totalPrice } = useCart();
   const [isOrderComplete, setIsOrderComplete] = useState(false);
@@ -33,8 +34,8 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
   };
 
   return(
-    <div className="cart-overlay">
-      <div className='cart'>
+    <div className={styles.cartOverlay}>
+      <div className={styles.cart}>
         <h2>
           Cart
           <img className="removeBtn" 
