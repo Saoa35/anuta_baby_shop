@@ -75,9 +75,10 @@ function Cart({ onCloseCart, onRemove, items = [] }) {
             </div>
           </div>
         ) : (<Info title={isOrderComplete ? "Order is completed" : "Cart is empty"} 
-                   description={isOrderComplete ? `Your order #${orderId} has been sent for processing, our operators will contact you shortly` 
-                                                : "Add at least one item, to place an order"} 
-                   image={isOrderComplete ? "/img/complete-order.jpg" : "/img/empty-cart.png"}/>)}
+              description={isOrderComplete ? 
+                `Your order #${orderId} has been sent for processing, our operators will contact you shortly` 
+              : "Add at least one item, to place an order"} 
+              image={isOrderComplete ? "/img/complete-order.jpg" : "/img/empty-cart.png"}/>)}
       </div>
     </div>
   )

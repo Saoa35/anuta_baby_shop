@@ -10,14 +10,20 @@ import AppContext from "../context";
 function Orders() {
 
   const [orders, setOrders] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { onAddToCart, onAddToFavorite } = useContext(AppContext);
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get('https://63540251e64783fa827d56c7.mockapi.io/orders');
-      setOrders(data.reduce((prev, obj) => [...prev, obj.items], []));
-      // setOrders(data.map((obj) => obj.items).flat());
+      try {
+        const { data } = await axios.get('https://63540251e64783fa827d56c7.mockapi.io/orders');
+        setOrders(data.reduce((prev, obj) => [...prev, ...obj.items], []));
+        // setOrders(data.map((obj) => obj.items).flat());
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.mesage);
+      }
     })();
   }, []);
 
@@ -29,12 +35,8 @@ function Orders() {
       
       <div className='goods'>
 
-        {orders.map((item, index) => (
-                    <Card 
-                      key={index} 
-                    //   isFavorite={true}
-                      {...item}
-                    />      
+        {(isLoading ? [...Array(8)] : orders).map((item, index) => (
+          <Card key={index} loading={isLoading} {...item} />         
                 )
             )
             }

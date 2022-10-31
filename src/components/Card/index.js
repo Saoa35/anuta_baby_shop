@@ -15,7 +15,7 @@ export function
           isLoading = false }) {
 
   const [isLiked, setIsLiked] = useState(isFavorite);
-  
+
   const { isItemAdded } = useContext(AppContext);
 
   const onClickPlus = () => {
@@ -58,11 +58,12 @@ export function
               <span>Price:</span>
               <b>{price} UAH</b>
             </div>
-            <img className={styles.plus} 
+            {onPlus && <img className={styles.plus} 
                 onClick={onClickPlus} 
                 src={isItemAdded(id) ? '/img/btn-checked.svg' : '/img/btn-plus.svg'} 
                 alt='Plus' 
-                title={!isItemAdded(id) ? "Add to Cart" : 'Delete from Cart'}/>
+                title={!isItemAdded(id) ? "Add to Cart" : 'Delete from Cart'}
+            />}
           </div>
         </>
       )}
