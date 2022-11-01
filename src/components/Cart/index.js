@@ -34,11 +34,12 @@ function Cart({ onCloseCart, onRemove, items = [], opened }) {
   };
 
   return(
-    <div className={`${styles.cartOverlay} ${opened ? styles.overlayVisible : ''}`}>
+    // <div className={`${styles.cartOverlay} ${opened ? styles.overlayVisible : ''}`}>
+    <div className={styles.overlay}>
       <div className={styles.cart}>
         <h2>
           Cart
-          <img className={styles.removeBtn} 
+          <img className='removeBtn'
                onClick={onCloseCart}
                src="/img/btn-remove.svg" 
                alt="Close"  
@@ -55,7 +56,7 @@ function Cart({ onCloseCart, onRemove, items = [], opened }) {
                     <p>{obj.title}</p>
                     <b>{obj.price} uah</b>
                   </div>
-                  <img className={styles.removeBtn} onClick={() => onRemove(obj.id)} src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
+                  <img className="removeBtn" onClick={() => onRemove(obj.id)} src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
                 </div>
               ))}
             </div>
@@ -72,7 +73,7 @@ function Cart({ onCloseCart, onRemove, items = [], opened }) {
                   <b>{totalPrice} uah</b>
                 </li>
               </ul>
-              <button disabled={isLoading} onClick={onClickOrder} className="greenButton">Place an order <img src="/img/arrow.svg" alt="Arrow"/></button>
+              <button disabled={isLoading} onClick={onClickOrder} className="greenButton">Place an order<img src="/img/arrow.svg" alt="Arrow"/></button>
             </div>
           </div>
         ) : (<Info title={isOrderComplete ? "Order is completed" : "Cart is empty"} 
