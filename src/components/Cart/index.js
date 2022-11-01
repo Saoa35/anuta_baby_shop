@@ -34,8 +34,7 @@ function Cart({ onCloseCart, onRemove, items = [], opened }) {
   };
 
   return(
-    // <div className={`${styles.cartOverlay} ${opened ? styles.overlayVisible : ''}`}>
-    <div className={styles.overlay}>
+    <div className={`${styles.overlay} ${opened ? styles.overlayVisible : ''}`}>
       <div className={styles.cart}>
         <h2>
           Cart
