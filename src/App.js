@@ -22,14 +22,24 @@ function App() {
 
   useEffect(() => {
     async function fetchData () {
-      const cartResponse = await axios.get(`${url}/cart`);
-      const favoritesResponse = await axios.get(`${url}/favorites`);
-      const itemsResponse = await axios.get(`${url}/items`);
-  
-      setLoading(false);
-      setCartItems(cartResponse.data);
-      setFavorites(favoritesResponse.data);
-      setItems(itemsResponse.data);
+      try {
+        // const cartResponse = await axios.get(`${url}/cart`);
+        // const favoritesResponse = await axios.get(`${url}/favorites`);
+        // const itemsResponse = await axios.get(`${url}/items`);
+
+        const [cartResponse, favoritesResponse, itemsResponse] = await Promise.all([
+          axios.get(`${url}/cart`),
+          axios.get(`${url}/favorites`),
+          axios.get(`${url}/items`),
+        ]);
+    
+        setLoading(false);
+        setCartItems(cartResponse.data);
+        setFavorites(favoritesResponse.data);
+        setItems(itemsResponse.data);
+      } catch (error) {
+        console.log(error.mesage);
+      }
     }
     
     fetchData ();
@@ -39,23 +49,26 @@ function App() {
   const onAddToCart = async (obj) => {
     try {
       if(cartItems.find(item => Number(item.id) === Number(obj.id))) {
-        await axios.delete(`${url}/cart/${obj.id}`);
         setCartItems(prev => prev.filter(item => Number(item.id) !== Number(obj.id)));
+        await axios.delete(`${url}/cart/${obj.id}`);
       } else {
-      await axios.post(`${url}/cart`, obj);
-      setCartItems(prev => [...prev, obj]);
-    // setCartItems([...cartItems, obj]);
-
+        setCartItems(prev => [...prev, obj]);
+      // setCartItems([...cartItems, obj]);
+        await axios.post(`${url}/cart`, obj);
       }
     } catch (error) {
-      console.error(error);
+      console.log(error.mesage);
     }
   };
 
 
   const onRemoveFromCart = (id) => {
-    axios.delete(`${url}/cart/${id}`);
-    setCartItems(prev => prev.filter(item => Number(item.id) !== Number(id)));
+    try {
+      axios.delete(`${url}/cart/${id}`);
+      setCartItems(prev => prev.filter(item => Number(item.id) !== Number(id)));
+    } catch (error) {
+      console.log(error.mesage);
+    }
   };
 
   const onChangeInput = (event) => {
@@ -72,7 +85,7 @@ function App() {
       setFavorites(prev => [...prev, data]);
       }
     } catch (error) {
-      console.log('Item could not be added to Favorites');
+      console.error(error);
     }
   };
 
