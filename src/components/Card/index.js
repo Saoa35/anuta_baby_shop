@@ -6,6 +6,7 @@ import AppContext from '../../context';
 export function 
         Card({ 
           id, 
+          parentId,
           title, 
           imgUrl, 
           price, 
@@ -15,15 +16,15 @@ export function
           isLoading = false }) {
 
   const [isLiked, setIsLiked] = useState(isFavorite);
-
   const { isItemAdded } = useContext(AppContext);
+  const obj = { id, parentId: id, title, imgUrl, price };
 
   const onClickPlus = () => {
-    onPlus({id, title, imgUrl, price})
+    onPlus(obj)
   };
 
   const onClickFavorite = () => {
-    onFavorite({id, title, imgUrl, price})
+    onFavorite(obj)
     setIsLiked(!isLiked);
   }
 
