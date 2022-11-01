@@ -12,6 +12,7 @@
   opacity: 0;
   transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
   overflow: hidden;
+  min-height: fit-content;
 
   .cart {
     display:flex;
@@ -20,7 +21,7 @@
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     width: 385px;
-    // min-height: fit-content;
+    min-height: fit-content;
     right: 0;
     background: #ffffff;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
@@ -33,7 +34,9 @@
       overflow: hidden;
       width: 385px;
       padding: 30px;
-      flex: 1;
+      // flex: 1;
+      overflow: hidden;
+      min-height: fit-content;
     }
 
     h2 {
@@ -44,11 +47,12 @@
     }
 
     .items {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
+      // display: flex;
+      // flex-direction: column;
+      // flex: 1;
       overflow: auto;
       margin-bottom: 40px;
+      overflow: hidden;
     }
 
     .cartItem {

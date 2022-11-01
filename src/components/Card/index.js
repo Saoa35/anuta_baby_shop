@@ -6,7 +6,6 @@ import AppContext from '../../context';
 export function 
         Card({ 
           id, 
-          parentId,
           title, 
           imgUrl, 
           price, 
