@@ -56,7 +56,7 @@ function Cart({ onCloseCart, onRemove, items = [], opened }) {
                     <p>{obj.title}</p>
                     <b>{obj.price} uah</b>
                   </div>
-                  <img className="removeBtn" onClick={() => onRemove(obj.id)} src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
+                  <img className="removeBtn" onClick={() => onRemove(obj.id)} src="/img/btn-remove.svg" alt="Remove" title="Remove from Cart"/>
                 </div>
               ))}
             </div>
