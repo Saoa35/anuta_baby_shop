@@ -34,11 +34,11 @@ function Cart({ onCloseCart, onRemove, items = [], opened }) {
   };
 
   return(
-    <div className={styles.cartOverlay}>
+    <div className={`${styles.cartOverlay} ${opened ? styles.overlayVisible : ''}`}>
       <div className={styles.cart}>
         <h2>
           Cart
-          <img className="removeBtn" 
+          <img className={styles.removeBtn} 
                onClick={onCloseCart}
                src="/img/btn-remove.svg" 
                alt="Close"  
@@ -46,20 +46,20 @@ function Cart({ onCloseCart, onRemove, items = [], opened }) {
         </h2>
 
         {items.length > 0 ? ( 
-          <div className="cartField">
-            <div className="items">
+          <div className={styles.cartField}>
+            <div className={styles.items}>
               {items.map((obj, index) => (
-                <div className="cartItem" key={index}>
+                <div className={styles.cartItem} key={index}>
                   <img width={80} height={65} style={{borderRadius:'10px', marginRight:'20px'}} src={obj.imgUrl} alt="Goods"/>
                   <div style={{marginRight:'15px'}}>
                     <p>{obj.title}</p>
                     <b>{obj.price} uah</b>
                   </div>
-                  <img className="removeBtn" onClick={() => onRemove(obj.id)} src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
+                  <img className={styles.removeBtn} onClick={() => onRemove(obj.id)} src="/img/btn-remove.svg" alt="Remove"  title="Remove from Cart"/>
                 </div>
               ))}
             </div>
-            <div className="cartFooter">
+            <div className={styles.cartFooter}>
               <ul>
                 <li>
                   <span>Total items:</span>
