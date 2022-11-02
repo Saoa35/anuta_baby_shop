@@ -18,9 +18,6 @@ body {
     max-width: 1080px;
     margin: 20px auto;
     position: relative;
-    // max-height: fit-content;
-  
-
   
     header {
       padding: 25px;
@@ -174,8 +171,7 @@ body {
     flex-direction: column;
   }
 
-  .cart-overlay {
-    // max-height: fit-content;
+  .overlay {
 
     .cart{
       max-width:300px;
