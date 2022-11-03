@@ -72,7 +72,7 @@ function Cart({ onCloseCart, onRemove, items = [], opened }) {
                   <b>{totalPrice} uah</b>
                 </li>
               </ul>
-              <button disabled={isLoading} onClick={onClickOrder} className="greenButton">Place an order<img src="/img/arrow.svg" alt="Arrow"/></button>
+              <button disabled={isLoading} onClick={onClickOrder} className="greenButton">Buy All<img src="/img/arrow.svg" alt="Arrow"/></button>
             </div>
           </div>
         ) : (<Info title={isOrderComplete ? "Order is completed" : "Cart is empty"} 
