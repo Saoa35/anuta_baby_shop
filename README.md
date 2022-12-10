@@ -1,10 +1,10 @@
 Online shop for selling flying models. 
 Stack:
-ReactJS + hooks
-React Router
-Axios
-SCSS
-React Context
+ReactJS + hooks,
+React Router,
+Axios,
+SCSS,
+React Context,
 React Skeleton
 
 ![msh_1](https://user-images.githubusercontent.com/78507597/206872448-c55f1de6-517d-4f99-a593-a1e3a6036221.png)
