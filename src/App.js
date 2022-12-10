@@ -70,7 +70,7 @@ function App() {
         );
       }
     } catch (error) {
-      console.log(error.mesage);
+      console.log(error.message);
     }
   };
 
