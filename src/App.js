@@ -68,7 +68,6 @@ function App() {
             return item;
           })
         );
-        // setCartItems([...cartItems, obj]);
       }
     } catch (error) {
       console.log(error.mesage);
