@@ -1,5 +1,5 @@
 Online shop for selling flying models. 
-Stack:
+It was created by using technologies such as:
 ReactJS + hooks,
 React Router,
 Axios,
